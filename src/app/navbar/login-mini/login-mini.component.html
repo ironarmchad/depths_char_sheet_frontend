@@ -1,0 +1,54 @@
+<!-- Logic for the login button -->
+<div ngbDropdown class="d-inline-block"
+     *ngIf="!loggedIn">
+  <button class="btn btn-outline-light"
+          type="button"
+          ngbDropdownToggle>Login</button>
+  <div ngbDropdownMenu
+       class="dropdown-menu dropdown-menu-right"
+       style="width: 250px"
+       aria-labelledby="dropdownLogin">
+    <form class="px-4 py-3" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text"
+               formControlName="username"
+               class="form-control"
+               [ngClass]="{'is-invalid': submitted && f.username.errors}"
+               id="username">
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+          <div *ngIf="f.username.errors.required">Username is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password"
+               formControlName="password"
+               class="form-control"
+               [ngClass]="{'is-invalid': submitted && f.password.errors}"
+               id="password">
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.username.errors.required">Username is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="submit"
+                [disabled]="loading"
+                class="btn btn-primary">Sign in</button>
+      </div>
+
+      <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+    </form>
+  </div>
+</div>
+
+<!-- User button -->
+<div ngbDropdown
+     *ngIf="loggedIn"
+     class="d-inline-block">
+  <button class="btn btn-outline-light"
+          type="button"
+          ngbDropdownToggle>{{user}}</button>
+</div>

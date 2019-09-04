@@ -20,9 +20,9 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string) {
-    return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, {username, password})
+    return this.http.post<any>(`${environment.apiUrl}/user/login`, {username, password})
       .pipe(map(user => {
-        if (user && user.token) {
+        if (user && user.accessToken) {
           localStorage.setItem('currentUser', JSON.stringify(user));
           this.currentUserSubject.next(user);
         }
