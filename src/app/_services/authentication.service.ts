@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs';
+import {BehaviorSubject, Observable, pipe} from 'rxjs';
 import {User} from '../_models/user';
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
@@ -17,6 +17,20 @@ export class AuthenticationService {
 
   public get currentUserValue(): User {
     return this.currentUserSubject.value;
+  }
+
+  setCurrentUser = (user) => {
+  }
+
+  register(username: string, password: string) {
+    return this.http.post<any>(`${environment.apiUrl}/user/register`, {username, password})
+      .pipe(map(user => {
+        if (user && user.accessToken) {
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          this.currentUserSubject.next(user);
+        }
+        return user;
+      }));
   }
 
   login(username: string, password: string) {

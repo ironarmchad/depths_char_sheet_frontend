@@ -9,13 +9,9 @@ import {UserService} from '../_services';
   templateUrl: 'home.component.html'
 })
 export class HomeComponent implements OnInit {
-  users: User[];
 
-  constructor(private userService: UserService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.userService.getAll().pipe(first()).subscribe(users => {
-      this.users = users['users'];
-    });
   }
 }

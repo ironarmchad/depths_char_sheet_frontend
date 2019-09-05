@@ -41,6 +41,8 @@
 
       <div *ngIf="error" class="alert alert-danger">{{error}}</div>
     </form>
+    <div class="dropdown-divider"></div>
+    <button (click)="goRegister()" ngbDropdownItem>New? Register here.</button>
   </div>
 </div>
 
@@ -51,4 +53,10 @@
   <button class="btn btn-outline-light"
           type="button"
           ngbDropdownToggle>{{user}}</button>
+  <div ngbDropdownMenu
+       class="dropdown-menu dropdown-menu-right"
+       aria-labelledby="userAdmin">
+    <button ngbDropdownItem (click)="logout()">Logout</button>
+  </div>
+
 </div>

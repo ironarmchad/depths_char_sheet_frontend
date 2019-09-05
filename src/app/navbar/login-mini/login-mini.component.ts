@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
 import {AuthenticationService} from '../../_services';
 import {first} from 'rxjs/operators';
-import {User} from '../../_models/user';
 
 @Component({
   selector: 'app-login-mini',
@@ -19,6 +19,7 @@ export class LoginMiniComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private router: Router,
     private authenticationService: AuthenticationService
   ) { }
 
@@ -54,6 +55,16 @@ export class LoginMiniComponent implements OnInit {
           this.error = error;
           this.loading = false;
         });
+  }
+
+  goRegister() {
+    this.router.navigate(['auth', 'register']);
+  }
+
+
+  logout() {
+    this.authenticationService.logout();
+    this.loggedIn = false;
   }
 
 }

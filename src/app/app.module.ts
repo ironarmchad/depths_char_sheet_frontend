@@ -9,16 +9,16 @@ import { AppComponent } from './app.component';
 import {HomeComponent} from './home/home.component';
 import {JwtInterceptor} from './_helpers/jwt.interceptor';
 import {ErrorInterceptor} from './_helpers/error.interceptor';
-import { LoginComponent } from './login/login.component';
 import { SecretComponent } from './secret/secret.component';
 import {NavbarModule} from './navbar/navbar.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent,
-    SecretComponent
+    SecretComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
