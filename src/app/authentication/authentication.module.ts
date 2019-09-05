@@ -4,6 +4,7 @@ import { RegisterComponent } from './register/register.component';
 import {LoginComponent} from './login/login.component';
 import {AuthenticationRoutingModule} from './authentication-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
+import {NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -12,7 +13,8 @@ import {ReactiveFormsModule} from '@angular/forms';
   imports: [
     CommonModule,
     AuthenticationRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbAlertModule
   ]
 })
 export class AuthenticationModule { }

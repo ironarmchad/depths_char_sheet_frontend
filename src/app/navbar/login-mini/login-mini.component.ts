@@ -11,23 +11,19 @@ import {first} from 'rxjs/operators';
 })
 export class LoginMiniComponent implements OnInit {
   loggedIn: boolean;
-  user: string;
   loginForm: FormGroup;
   loading = false;
   submitted = false;
   error = '';
+  user: string;
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private authenticationService: AuthenticationService
-  ) { }
+  ) {  }
 
   ngOnInit() {
-    this.loggedIn = !!this.authenticationService.currentUserValue;
-
-    if (this.loggedIn) { this.user = this.authenticationService.currentUserValue.username; }
-
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]

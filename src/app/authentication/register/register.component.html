@@ -2,5 +2,53 @@
   <h2>Register</h2>
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
+    <div class="alert alert-danger"
+         *ngIf="registerForm.errors && f.password.touched && f.confirm.touched"
+         role="alert">
+      <div *ngIf="registerForm.errors.notSame">
+        Password and confirmation must match.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="registerUsername">Username</label>
+      <input type="text"
+             id="registerUsername"
+             formControlName="username"
+             class="form-control"
+             [ngClass]="{'is-invalid': f.username.touched && f.username.errors}"/>
+      <div *ngIf="f.username.touched && f.username.errors" class="invalid-feedback">
+        <div *ngIf="f.username.errors.required">Username is required.</div>
+        <div *ngIf="f.username.errors.usernameInUse">Username is not unique.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="registerPassword">Password</label>
+      <input type="password"
+             id="registerPassword"
+             formControlName="password"
+             class="form-control"
+             [ngClass]="{ 'is-invalid': f.password.touched && f.password.errors }"/>
+      <div *ngIf="f.password.touched && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Password is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="registerConfirm">Confirmation</label>
+      <input type="password"
+             id="registerConfirm"
+             formControlName="confirm"
+             class="form-control"
+             [ngClass]="{ 'is-invalid': f.confirm.touched && f.confirm.errors }"/>
+      <div *ngIf="f.confirm.touched && f.confirm.errors" class="invalid-feedback">
+        <div *ngIf="f.confirm.errors.required">Confirm password is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button [disabled]="registerForm.invalid" class="btn btn-primary">Login</button>
+    </div>
   </form>
 </div>

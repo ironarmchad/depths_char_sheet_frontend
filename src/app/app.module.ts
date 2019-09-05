@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbAlertModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,7 +27,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     NgbDropdownModule,
     FormsModule,
     ReactiveFormsModule,
-    NavbarModule
+    NavbarModule,
+    NgbAlertModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

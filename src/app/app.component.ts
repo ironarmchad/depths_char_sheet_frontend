@@ -9,5 +9,4 @@ import {AuthenticationService} from './_services';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
 }

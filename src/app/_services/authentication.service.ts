@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {BehaviorSubject, Observable, pipe} from 'rxjs';
 import {User} from '../_models/user';
 import {HttpClient} from '@angular/common/http';
@@ -19,7 +19,8 @@ export class AuthenticationService {
     return this.currentUserSubject.value;
   }
 
-  setCurrentUser = (user) => {
+  checkForUsername(username: string) {
+    return this.http.post<any>(`${environment.apiUrl}/user/available`, {username});
   }
 
   register(username: string, password: string) {
