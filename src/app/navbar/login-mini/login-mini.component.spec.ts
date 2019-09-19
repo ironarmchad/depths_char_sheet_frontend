@@ -1,6 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginMiniComponent } from './login-mini.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {Router} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
+import {AuthenticationService} from '../../_services';
+
+class RouterStub {
+  navigate(params) {}
+}
 
 describe('LoginMiniComponent', () => {
   let component: LoginMiniComponent;
@@ -8,7 +16,12 @@ describe('LoginMiniComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginMiniComponent ]
+      imports: [HttpClientModule, FormsModule, ReactiveFormsModule],
+      declarations: [ LoginMiniComponent],
+      providers: [
+        AuthenticationService,
+        {provide: Router, useClass: RouterStub}
+      ]
     })
     .compileComponents();
   }));

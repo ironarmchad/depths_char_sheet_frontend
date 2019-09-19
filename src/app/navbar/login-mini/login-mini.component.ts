@@ -63,4 +63,7 @@ export class LoginMiniComponent implements OnInit {
     this.loggedIn = false;
   }
 
+  user_info() {
+    this.router.navigate(['user']);
+  }
 }

@@ -1,6 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RegisterComponent } from './register.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AuthenticationService} from '../../_services';
+import {HttpClientModule} from '@angular/common/http';
+import {ActivatedRoute, ActivatedRouteSnapshot, Router} from '@angular/router';
+import {RouterStub} from '../../_stubs/router-stub';
+
+
 
 describe('RegisterComponent', () => {
   let component: RegisterComponent;
@@ -8,7 +15,12 @@ describe('RegisterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RegisterComponent ]
+      imports: [HttpClientModule, FormsModule, ReactiveFormsModule],
+      declarations: [ RegisterComponent ],
+      providers: [
+        AuthenticationService,
+        {provide: Router, useClass: RouterStub},
+      ]
     })
     .compileComponents();
   }));

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SecretComponent } from './secret.component';
+import { NaturalAbilitiesComponent } from './natural-abilities.component';
 
-describe('SecretComponent', () => {
-  let component: SecretComponent;
-  let fixture: ComponentFixture<SecretComponent>;
+describe('NaturalAbilitiesComponent', () => {
+  let component: NaturalAbilitiesComponent;
+  let fixture: ComponentFixture<NaturalAbilitiesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SecretComponent ]
+      declarations: [ NaturalAbilitiesComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SecretComponent);
+    fixture = TestBed.createComponent(NaturalAbilitiesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

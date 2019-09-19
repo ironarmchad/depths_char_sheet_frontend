@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ActivatedRoute, Router} from '@angular/router';
+import { Router} from '@angular/router';
 import {AuthenticationService} from '../../_services';
 import {passwordMatchValidator} from '../_directives/password-match.directive';
 import {usernameUniqueValidator} from '../_directives/username-unique.directive';
@@ -18,7 +18,6 @@ export class RegisterComponent implements OnInit{
   constructor(
     private authenticationService: AuthenticationService,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
     private router: Router
   ) { }
 

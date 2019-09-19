@@ -1,5 +1,7 @@
 <nav class="navbar navbar-dark bg-dark">
-  <span class="navbar-brand">Depths Role Playing Game</span>
-  <span class="text-center">{{currentUser}}</span>
+  <a routerLink="/" class="navbar-brand">Depths RPG</a>
+  <div routerLink="/character">
+    <button routerLinkActive="active" class="btn btn-outline-light">Character</button>
+  </div>
   <app-login-mini></app-login-mini>
 </nav>
