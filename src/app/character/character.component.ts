@@ -10,6 +10,7 @@ import {CharacterService} from '../_services/character.service';
   styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent implements OnInit {
+  characters: [any];
   newCharForm: FormGroup;
   returnUrl: string;
 
@@ -22,6 +23,10 @@ export class CharacterComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Characters pane
+    this.charServ.characterAll().subscribe(r => this.characters = r);
+
+    // New Character form
     this.newCharForm = this.formBuilder.group({
       charname: ['', Validators.required],
     });
@@ -36,7 +41,7 @@ export class CharacterComponent implements OnInit {
       return;
     }
 
-    this.charServ.characterNew('johnny').subscribe(r => console.log(r));
+    this.charServ.characterNew(this.f.charname.value).subscribe();
   }
 
 }

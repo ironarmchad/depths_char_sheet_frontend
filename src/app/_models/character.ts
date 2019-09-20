@@ -1,4 +1,6 @@
-export class Character {
+import {Deserializable} from '../_interfaces/deserializable';
+
+export class Character implements Deserializable {
   id?: number;
   owner?: number;
   name?: string;
@@ -17,4 +19,9 @@ export class Character {
   faith?: number;
   luck?: number;
   charisma?: number;
+
+  deserialize(input: any): this {
+    Object.assign(this, input);
+    return this;
+  }
 }

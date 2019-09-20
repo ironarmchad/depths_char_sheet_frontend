@@ -8,7 +8,7 @@ import {UserComponent} from './user/user.component';
 
 
 const routes: Routes = [
-  { path: 'character', loadChildren: './character/character.module#CharacterModule' },
+  { path: 'character', loadChildren: './character/character.module#CharacterModule', canActivate: [AuthGuard] },
   { path: 'user', component: UserComponent, canActivate: [AuthGuard]},
   { path: 'auth',
     loadChildren: './authentication/authentication.module#AuthenticationModule'

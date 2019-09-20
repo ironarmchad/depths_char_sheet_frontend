@@ -15,4 +15,10 @@ export class CharacterService {
   characterNew(name) {
     return this.http.post<Character>(`${environment.apiUrl}/character/new`, {name});
   }
+
+  characterAll() {
+    return this.http.get<[Character]>(`${environment.apiUrl}/character/all`)
+      // tslint:disable-next-line:no-string-literal
+      .pipe(map(res => res['characters'].map(char => new Character().deserialize(char))));
+  }
 }

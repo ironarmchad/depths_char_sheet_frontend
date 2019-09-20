@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SuperAbilitiesComponent } from './super-abilities.component';
+import { LoreComponent } from './lore.component';
 
-describe('SuperAbilitiesComponent', () => {
-  let component: SuperAbilitiesComponent;
-  let fixture: ComponentFixture<SuperAbilitiesComponent>;
+describe('LoreComponent', () => {
+  let component: LoreComponent;
+  let fixture: ComponentFixture<LoreComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SuperAbilitiesComponent ]
+      declarations: [ LoreComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SuperAbilitiesComponent);
+    fixture = TestBed.createComponent(LoreComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

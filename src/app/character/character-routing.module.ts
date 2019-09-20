@@ -3,11 +3,11 @@ import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
 
 const routes: Routes = [
-  { path: 'create', loadChildren: './create/create.module#CreateModule'},
+  { path: 'edit', loadChildren: () => import('./edit/edit.module').then(m => m.EditModule) },
   {
     path: '',
     component: CharacterComponent
-  }
+  },
 ];
 
 @NgModule({

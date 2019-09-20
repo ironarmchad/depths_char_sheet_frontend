@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NaturalAbilitiesComponent } from './natural-abilities.component';
+import { EditComponent } from './edit.component';
 
-describe('NaturalAbilitiesComponent', () => {
-  let component: NaturalAbilitiesComponent;
-  let fixture: ComponentFixture<NaturalAbilitiesComponent>;
+describe('EditComponent', () => {
+  let component: EditComponent;
+  let fixture: ComponentFixture<EditComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NaturalAbilitiesComponent ]
+      declarations: [ EditComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NaturalAbilitiesComponent);
+    fixture = TestBed.createComponent(EditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
