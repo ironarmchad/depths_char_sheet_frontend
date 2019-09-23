@@ -1,0 +1,12 @@
+<div class="card border-dark mb-3" style="min-width: 18rem;">
+  <div class="card-body">
+    <h4 class="card-title text-center">{{character.name}}</h4>
+    <p class="card-text">{{character.summary}}</p>
+    <div class="text-center">
+      <div class="btn-group">
+        <div class="btn btn-primary btn-sm" routerLink="/character/{{character.id}}">View</div>
+        <div class="btn btn-secondary btn-sm" routerLink="/character/{{character.id}}/edit">Edit</div>
+      </div>
+    </div>
+  </div>
+</div>

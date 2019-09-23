@@ -2,11 +2,9 @@
   <div class="row">
     <div class="col">
       <h2>Your Characters</h2>
-      <ul>
-        <li *ngFor="let character of characters">
-          ID: {{character.id}} NAME: {{character.name}}
-        </li>
-      </ul>
+      <div class="card-deck">
+        <app-char-card *ngFor="let character of characters" [character]="character"></app-char-card>
+      </div>
     </div>
     <div class="col-4">
       <h2>New Character</h2>

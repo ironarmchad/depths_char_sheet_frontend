@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AuthenticationService} from '../_services';
 import {CharacterService} from '../_services/character.service';
+import {Character} from '../_models/character';
 
 @Component({
   selector: 'app-character',
@@ -10,7 +10,7 @@ import {CharacterService} from '../_services/character.service';
   styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent implements OnInit {
-  characters: [any];
+  characters: [Character];
   newCharForm: FormGroup;
   returnUrl: string;
 
@@ -18,7 +18,7 @@ export class CharacterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private charServ: CharacterService
+    private charServ: CharacterService,
   ) {
   }
 
@@ -43,5 +43,4 @@ export class CharacterComponent implements OnInit {
 
     this.charServ.characterNew(this.f.charname.value).subscribe();
   }
-
 }

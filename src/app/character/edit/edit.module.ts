@@ -1,21 +1,25 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { EditRoutingModule } from './edit-routing.module';
-import { EditComponent } from './edit.component';
-import { LoreComponent } from './lore/lore.component';
+import {EditRoutingModule} from './edit-routing.module';
+import {EditComponent} from './edit.component';
+import {CoreComponent} from './core/core.component';
+import {StatsComponent} from './stats/stats.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NgbDropdown, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 
-const routes: Routes = [
-  { path: '', component: EditComponent }
-];
 
 @NgModule({
-  declarations: [EditComponent, LoreComponent],
+  declarations: [EditComponent, CoreComponent, StatsComponent],
   imports: [
     CommonModule,
     EditRoutingModule,
-    RouterModule.forChild(routes)
-  ]
+    ReactiveFormsModule,
+    FormsModule,
+    NgbDropdownModule,
+    NgbDropdownModule
+  ],
+  bootstrap: [EditComponent]
 })
-export class EditModule { }
+export class EditModule {
+}
