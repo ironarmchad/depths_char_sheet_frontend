@@ -12,6 +12,7 @@ import {ErrorInterceptor} from './_helpers/error.interceptor';
 import {NavbarModule} from './navbar/navbar.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UserComponent } from './user/user.component';
+import { OutOfDomainComponent } from './out-of-domain/out-of-domain.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { UserComponent } from './user/user.component';
     HomeComponent,
     PageNotFoundComponent,
     UserComponent,
+    OutOfDomainComponent,
   ],
   imports: [
     BrowserModule,

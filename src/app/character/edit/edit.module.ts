@@ -6,19 +6,23 @@ import {EditComponent} from './edit.component';
 import {CoreComponent} from './core/core.component';
 import {StatsComponent} from './stats/stats.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {NgbDropdown, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbActiveModal, NgbDropdownModule, NgbModal, NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
+import {PointBuyComponent} from './stats/point-buy/point-buy.component';
+import { StatButtonsComponent } from './stats/point-buy/stat-buttons/stat-buttons.component';
 
 
 @NgModule({
-  declarations: [EditComponent, CoreComponent, StatsComponent],
+  declarations: [EditComponent, CoreComponent, StatsComponent, PointBuyComponent, StatButtonsComponent],
   imports: [
     CommonModule,
     EditRoutingModule,
     ReactiveFormsModule,
     FormsModule,
     NgbDropdownModule,
-    NgbDropdownModule
+    NgbModalModule
   ],
+  entryComponents: [PointBuyComponent],
+  providers: [NgbActiveModal],
   bootstrap: [EditComponent]
 })
 export class EditModule {
