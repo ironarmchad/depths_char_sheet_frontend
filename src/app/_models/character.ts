@@ -19,6 +19,7 @@ export class Character implements Deserializable {
   faith?: number;
   luck?: number;
   charisma?: number;
+  pointValue?: number;
 
   deserialize(input: any): this {
     Object.assign(this, input);

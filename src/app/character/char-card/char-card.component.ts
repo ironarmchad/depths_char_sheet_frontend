@@ -1,6 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Character} from '../../_models/character';
-import {CharacterService} from '../../_services/character.service';
 
 @Component({
   selector: 'app-char-card',

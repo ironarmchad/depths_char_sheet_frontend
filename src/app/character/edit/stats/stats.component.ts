@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PointBuyComponent} from './point-buy/point-buy.component';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {DirectEditComponent} from './direct-edit/direct-edit.component';
 
 @Component({
   selector: 'app-stats',
@@ -15,7 +16,11 @@ export class StatsComponent implements OnInit {
   }
 
   openPointBuy() {
-    const modalRef = this.modalService.open(PointBuyComponent, {size: 'lg'});
+    this.modalService.open(PointBuyComponent, {size: 'lg'});
+  }
+
+  openDirectEdit() {
+    this.modalService.open(DirectEditComponent);
   }
 
 }

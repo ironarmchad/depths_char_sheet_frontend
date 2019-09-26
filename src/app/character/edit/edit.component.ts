@@ -28,7 +28,7 @@ export class EditComponent implements OnInit {
 
   onSubmit() {
     this.charServ.characterPatch(this.editServ.character).subscribe();
-    this.router.navigate(['character',{id: this.editServ.character.id}]);
+    this.router.navigate(['character', {id: this.editServ.character.id}]);
   }
 
   onDelete() {

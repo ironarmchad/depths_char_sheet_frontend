@@ -3,6 +3,8 @@
   <button type="button" class="btn btn-sm btn-secondary" (click)="activeModal.dismiss('Cross click')">&times;</button>
 </div>
 <div class="modal-body">
+  <h5>Points Remaining: {{pointBuyValue}}</h5>
+  <br>
   <app-stat-buttons stat="Strength" (value)="onStatChange('strength', $event)"></app-stat-buttons>
   <app-stat-buttons stat="Reflex" (value)="onStatChange('reflex', $event)"></app-stat-buttons>
   <app-stat-buttons stat="Vitality" (value)="onStatChange('vitality', $event)"></app-stat-buttons>
@@ -16,5 +18,5 @@
   <app-stat-buttons stat="Charisma" (value)="onStatChange('charisma', $event)"></app-stat-buttons>
 </div>
 <div class="modal-footer text-center">
-  <button type="button" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+  <button type="button" class="btn btn-primary" (click)="onSubmit()" [disabled]="pointBuyValue !== 0">Submit</button>
 </div>

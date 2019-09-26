@@ -1,6 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserComponent } from './user.component';
+import {AuthenticationService} from '../_services';
+import {HttpClientModule} from '@angular/common/http';
+
+const fakeAuthenticationService = {
+  currentUserValue: {
+    username: 'test'
+  }
+};
 
 describe('UserComponent', () => {
   let component: UserComponent;
@@ -8,7 +16,11 @@ describe('UserComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserComponent ]
+      imports: [HttpClientModule],
+      declarations: [ UserComponent ],
+      providers: [
+        {provide: AuthenticationService, useFactory: () => fakeAuthenticationService}
+      ]
     })
     .compileComponents();
   }));

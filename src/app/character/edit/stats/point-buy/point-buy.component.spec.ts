@@ -1,14 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PointBuyComponent } from './standard-array.component';
+import { PointBuyComponent } from './point-buy.component';
+import {CharacterEditService} from '../../_character-edit.service';
+import {NgbActiveModal, NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbActiveModalStub} from '../../../../_stubs/ngb-active-modal-stub';
+import {StatButtonsComponent} from './stat-buttons/stat-buttons.component';
 
-describe('StandardArrayComponent', () => {
+describe('PointBuyComponent', () => {
   let component: PointBuyComponent;
   let fixture: ComponentFixture<PointBuyComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PointBuyComponent ]
+      imports: [NgbModalModule],
+      declarations: [ PointBuyComponent, StatButtonsComponent ],
+      providers: [
+        {provide: NgbActiveModal, useClass: NgbActiveModalStub},
+        CharacterEditService
+      ]
     })
     .compileComponents();
   }));

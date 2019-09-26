@@ -1,0 +1,28 @@
+import {Component, OnInit} from '@angular/core';
+import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {CharacterEditService} from '../../_character-edit.service';
+import {Stats} from '../../../../_models/stats';
+import {FormBuilder} from '@angular/forms';
+
+@Component({
+  selector: 'app-direct-edit',
+  templateUrl: './direct-edit.component.html',
+  styleUrls: ['./direct-edit.component.scss']
+})
+export class DirectEditComponent implements OnInit {
+  statBlock: Stats;
+
+  constructor(private activeModal: NgbActiveModal,
+              private charEditServ: CharacterEditService
+  ) {
+  }
+
+  ngOnInit() {
+    this.statBlock = new Stats()
+    this.statBlock.getFromCharacter(this.charEditServ.character);
+  }
+
+  onSubmit() {
+
+  }
+}
