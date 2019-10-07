@@ -4,6 +4,7 @@ import {CoreComponent} from './core/core.component';
 import {EditComponent} from './edit.component';
 import {StatsComponent} from './stats/stats.component';
 import {AuthGuard} from '../../_guards/auth.guard';
+import {AbilitiesComponent} from './abilities/abilities.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,11 @@ const routes: Routes = [
     component: EditComponent,
     canActivate: [AuthGuard],
     children: [
+      {
+        path: 'abilities',
+        component: AbilitiesComponent,
+        canActivate: [AuthGuard]
+      },
       {
         path: 'stats',
         component: StatsComponent,

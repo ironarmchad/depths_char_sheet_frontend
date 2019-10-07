@@ -1,0 +1,31 @@
+<div class="ability-container">
+  <div class="ability-box">
+    <app-ab-card
+      *ngFor="let ability of abilities"
+      [ability]="ability"
+      (editEmit)="openAbilityEdit($event)"
+      (deleteEmit)="onDelete($event)"
+    ></app-ab-card>
+  </div>
+
+  <div class="form-box">
+    <form [formGroup]="newAbilForm" (ngSubmit)="newAbility()">
+      <div class="form-group">
+        <label for="abilityName">New Ability</label>
+        <input type="text"
+               id="abilityName"
+               formControlName="abilname"
+               class="form-control"
+               [ngClass]="{'is-invalid': f.abilname.touched && f.abilname.errors}"/>
+        <div *ngIf="f.abilname.touched && f.abilname.errors" class="invalid-feedback">
+          <div *ngIf="f.abilname.errors.required">Character name is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button [disabled]="f.abilname.errors" class="btn btn-primary">Create New</button>
+      </div>
+    </form>
+  </div>
+
+</div>

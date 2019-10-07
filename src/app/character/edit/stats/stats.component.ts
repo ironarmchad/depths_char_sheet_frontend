@@ -20,7 +20,7 @@ export class StatsComponent implements OnInit {
   }
 
   openDirectEdit() {
-    this.modalService.open(DirectEditComponent);
+    this.modalService.open(DirectEditComponent, {size: 'lg'});
   }
 
 }

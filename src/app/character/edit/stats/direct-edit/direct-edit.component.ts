@@ -11,6 +11,7 @@ import {FormBuilder} from '@angular/forms';
 })
 export class DirectEditComponent implements OnInit {
   statBlock: Stats;
+  pointBuyValue: number;
 
   constructor(private activeModal: NgbActiveModal,
               private charEditServ: CharacterEditService
@@ -20,9 +21,18 @@ export class DirectEditComponent implements OnInit {
   ngOnInit() {
     this.statBlock = new Stats()
     this.statBlock.getFromCharacter(this.charEditServ.character);
+    this.pointBuyValue = this.statBlock.calculatePointValue();
+  }
+
+  onBlur() {
+    this.pointBuyValue = this.statBlock.calculatePointValue();
   }
 
   onSubmit() {
-
+    const newChar = Object.assign({}, this.charEditServ.character);
+    this.statBlock.updateCharacter(newChar);
+    newChar.pointValue = this.statBlock.calculatePointValue();
+    this.charEditServ.setCharacter(newChar);
+    this.activeModal.close();
   }
 }

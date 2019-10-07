@@ -18,7 +18,8 @@ export class CharacterService {
   }
 
   characterNew(name) {
-    return this.http.post<Character>(`${environment.apiUrl}/character/new`, {name});
+    return this.http.post<Character>(`${environment.apiUrl}/character/new`, {name})
+      .pipe(map(res => new Character().deserialize(res)));
   }
 
   characterPatch(character: Character) {

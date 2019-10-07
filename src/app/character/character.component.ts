@@ -34,13 +34,16 @@ export class CharacterComponent implements OnInit {
     this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
   }
 
-  get f() {return this.newCharForm.controls;}
+  get f() {return this.newCharForm.controls; }
 
   onSubmit() {
     if (this.newCharForm.invalid) {
       return;
     }
 
-    this.charServ.characterNew(this.f.charname.value).subscribe();
+    this.charServ.characterNew(this.f.charname.value).subscribe( res => {
+      this.router.navigate(['character', res.id, 'edit']);
+
+    });
   }
 }

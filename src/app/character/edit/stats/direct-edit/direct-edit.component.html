@@ -4,24 +4,145 @@
 </div>
 
 <div class="modal-body">
-  <form>
-    <div class="form-group form-inline">
-      <label for="strength">Strength</label>
-      <input type="text"
-             class="form-control"
-             id="strength"
-             name="strength"
-             required [(ngModel)]="statBlock.strength">
-    </div>
-    <div class="form-group form-inline">
-      <label for="reflex">Reflex</label>
-      <input type="text"
-             class="form-control"
-             id="reflex"
-             name="reflex"
-             required [(ngModel)]="statBlock.reflex">
-    </div>
-  </form>
+  <div class="form-block">
+    <form (ngSubmit)="onSubmit()">
+
+      <div class="row">
+        <div class="col text-center">
+          <h4>Point Value: {{pointBuyValue}}</h4>
+        </div>
+      </div>
+
+      <div class="point-block">
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group form-inline">
+            <label for="strength">Strength</label>
+            <input type="text"
+                   (blur)="onBlur()"
+                   class="form-control"
+                   id="strength"
+                   name="strength"
+                   required [(ngModel)]="statBlock.strength">
+          </div>
+
+          <div class="form-group form-inline">
+            <label for="reflex">Reflex</label>
+            <input type="text"
+                   (blur)="onBlur()"
+                   class="form-control"
+                   id="reflex"
+                   name="reflex"
+                   required [(ngModel)]="statBlock.reflex">
+          </div>
+
+          <div class="form-group form-inline">
+            <label for="vitality">Vitality</label>
+            <input type="text"
+                   (blur)="onBlur()"
+                   class="form-control"
+                   id="vitality"
+                   name="vitality"
+                   required [(ngModel)]="statBlock.vitality">
+          </div>
+
+          <div class="form-group form-inline">
+            <label for="speed">Speed</label>
+            <input type="text"
+                   (blur)="onBlur()"
+                   class="form-control"
+                   id="speed"
+                   name="speed"
+                   required [(ngModel)]="statBlock.speed">
+          </div>
+
+          <div class="form-group form-inline">
+            <label for="awareness">Awareness</label>
+            <input type="text"
+                   (blur)="onBlur()"
+                   class="form-control"
+                   id="awareness"
+                   name="awareness"
+                   required [(ngModel)]="statBlock.awareness">
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="form-group form-inline">
+            <label for="willpower">Willpower</label>
+            <input type="text"
+                   (blur)="onBlur()"
+                   class="form-control"
+                   id="willpower"
+                   name="willpower"
+                   required [(ngModel)]="statBlock.willpower">
+          </div>
+
+          <div class="form-group form-inline">
+            <label for="attunement">Attunement</label>
+            <input type="text"
+                   (blur)="onBlur()"
+                   class="form-control"
+                   id="attunement"
+                   name="attunement"
+                   required [(ngModel)]="statBlock.attunement">
+          </div>
+
+          <div class="form-group form-inline">
+            <label for="imagination">Imagination</label>
+            <input type="text"
+                   (blur)="onBlur()"
+                   class="form-control"
+                   id="imagination"
+                   name="imagination"
+                   required [(ngModel)]="statBlock.imagination">
+          </div>
+
+          <div class="form-group form-inline">
+            <label for="faith">Faith</label>
+            <input type="text"
+                   (blur)="onBlur()"
+                   class="form-control"
+                   id="faith"
+                   name="faith"
+                   required [(ngModel)]="statBlock.faith">
+          </div>
+
+          <div class="form-group form-inline">
+            <label for="luck">Luck</label>
+            <input type="text"
+                   (blur)="onBlur()"
+                   class="form-control"
+                   id="luck"
+                   name="luck"
+                   required [(ngModel)]="statBlock.luck">
+          </div>
+
+          <div class="form-group form-inline">
+            <label for="charisma">Charisma</label>
+            <input type="text"
+                   (blur)="onBlur()"
+                   class="form-control"
+                   id="charisma"
+                   name="charisma"
+                   required [(ngModel)]="statBlock.charisma">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col text-center">
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+
 
 </div>
 

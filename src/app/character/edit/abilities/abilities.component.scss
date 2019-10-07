@@ -1,0 +1,19 @@
+.ability-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.ability-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+}
+
+.form-box {
+  text-align: center;
+  padding: 10px;
+  border-style: solid;
+  border-radius: 10px;
+  width: 300px;
+}

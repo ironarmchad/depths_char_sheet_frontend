@@ -1,0 +1,16 @@
+<div class="card ab-card">
+  <div class="card-header">
+    {{ability.type}}
+  </div>
+  <div class="card-body">
+    <h4>{{ability.name}}</h4>
+    <p><strong>Summary:</strong> {{ability.summary}}</p><br>
+    <p><strong>Macro:</strong> {{ability.macro}}</p>
+  </div>
+  <div class="card-footer">
+    <div class="btn-toolbar">
+      <button class="btn btn-secondary" (click)="onEdit()">Edit</button>
+      <button class="btn btn-danger" (click)="onDelete()">Delete</button>
+    </div>
+  </div>
+</div>
