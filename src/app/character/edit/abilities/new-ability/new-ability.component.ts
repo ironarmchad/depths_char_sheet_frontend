@@ -8,7 +8,8 @@ class AbilityType {
   constructor(
     public identifier,
     public longString
-  ) {}
+  ) {
+  }
 }
 
 @Component({
@@ -44,8 +45,12 @@ export class NewAbilityComponent implements OnInit {
     this.ability.type = newType;
   }
 
+  onDismiss() {
+    this.activeModal.close();
+  }
+
   onSubmit() {
-    this.abilServ.abilityPatch(this.ability).subscribe( () => {
+    this.abilServ.abilityPatch(this.ability).subscribe(() => {
       this.submitEmit.emit(this.ability);
       this.activeModal.close();
     });

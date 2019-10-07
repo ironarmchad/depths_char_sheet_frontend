@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CharacterService} from '../../_services/character.service';
 import {CharacterEditService} from './_character-edit.service';
+import {Character} from '../../_models/character';
 
 
 @Component({
@@ -10,6 +11,7 @@ import {CharacterEditService} from './_character-edit.service';
   styleUrls: ['./edit.component.scss']
 })
 export class EditComponent implements OnInit {
+  character: Character;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,7 +25,10 @@ export class EditComponent implements OnInit {
     const params = this.route.snapshot.params;
     const {id} = params;
 
-    this.charServ.characterGet(id).subscribe(res => this.editServ.setCharacter(res));
+    this.charServ.characterGet(id).subscribe(res => {
+      this.editServ.setCharacter(res);
+      this.character = res;
+    });
   }
 
   onSubmit() {

@@ -28,6 +28,10 @@ export class DirectEditComponent implements OnInit {
     this.pointBuyValue = this.statBlock.calculatePointValue();
   }
 
+  onDismiss() {
+    this.activeModal.dismiss();
+  }
+
   onSubmit() {
     const newChar = Object.assign({}, this.charEditServ.character);
     this.statBlock.updateCharacter(newChar);

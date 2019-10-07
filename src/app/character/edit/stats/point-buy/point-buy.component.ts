@@ -26,6 +26,10 @@ export class PointBuyComponent implements OnInit {
     this.pointBuyValue = 110 - this.statBlock.calculatePointValue();
   }
 
+  onDismiss() {
+    this.activeModal.dismiss();
+  }
+
   onSubmit() {
     const newChar = Object.assign({}, this.charEditServ.character);
     this.statBlock.updateCharacter(newChar);
