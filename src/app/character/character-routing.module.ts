@@ -3,7 +3,6 @@ import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
 import {GetComponent} from './get/get.component';
 import {AuthGuard} from '../_guards/auth.guard';
-import {EditComponent} from './edit/edit.component';
 
 const routes: Routes = [
   {

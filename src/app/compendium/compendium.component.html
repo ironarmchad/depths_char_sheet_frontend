@@ -1,0 +1,8 @@
+<div class="container">
+  <h2>All Compendium Pages</h2>
+  <ul>
+    <li *ngFor="let page of pages">
+      <a routerLink="/compendium/{{page.id}}">{{page.title}}</a>
+    </li>
+  </ul>
+</div>

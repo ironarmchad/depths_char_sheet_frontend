@@ -1,0 +1,31 @@
+// Typography fixers
+@mixin legible-length {
+  max-width: $max_length;
+  min-width: $min_length;
+}
+
+@mixin legible-justification {
+  text-align: left;
+  @media screen and (min-width: 40em) {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+}
+
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+  & {
+    @each $property in $properties {
+      #{$property}: $min-value
+    }
+    @media screen and (min-width: $min-vw) {
+      @each $property in $properties {
+        #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+    }
+    @media screen and (min-width: $max-vw) {
+      @each $property in $properties {
+        #{$property}: $max-value;
+      }
+    }
+  }
+}

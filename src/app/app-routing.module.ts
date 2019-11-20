@@ -5,9 +5,12 @@ import {HomeComponent} from './home/home.component';
 import {AuthGuard} from './_guards/auth.guard';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {UserComponent} from './user/user.component';
+import {TypographyComponent} from './typography/typography.component';
 
 
 const routes: Routes = [
+  { path: 'typography', component: TypographyComponent},
+  { path: 'compendium', loadChildren: './compendium/compendium.module#CompendiumModule'},
   { path: 'character', loadChildren: './character/character.module#CharacterModule', canActivate: [AuthGuard] },
   { path: 'user', component: UserComponent, canActivate: [AuthGuard]},
   { path: 'auth',

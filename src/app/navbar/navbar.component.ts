@@ -7,10 +7,13 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   @Input() currentUser: string;
+  isMenuCollapsed: boolean;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    this.isMenuCollapsed = true;
   }
 
 }

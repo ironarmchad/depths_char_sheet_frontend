@@ -1,12 +1,11 @@
 <!-- Logic for the login button -->
 <div ngbDropdown class="d-inline-block"
      *ngIf="!user">
-  <button class="btn btn-outline-light"
-          type="button"
-          ngbDropdownToggle>Login</button>
+  <a class="nav-link"
+          ngbDropdownToggle>Login</a>
   <div ngbDropdownMenu
        class="dropdown-menu dropdown-menu-right"
-       style="width: 250px"
+       style="width: 300px"
        aria-labelledby="dropdownLogin">
     <form class="px-4 py-3" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
@@ -50,9 +49,8 @@
 <div ngbDropdown
      *ngIf="user"
      class="d-inline-block">
-  <button class="btn btn-outline-light"
-          type="button"
-          ngbDropdownToggle>{{user.username}}</button>
+  <a class="nav-link"
+          ngbDropdownToggle>{{user.username}}</a>
   <div ngbDropdownMenu
        class="dropdown-menu dropdown-menu-right"
        aria-labelledby="userAdmin">
