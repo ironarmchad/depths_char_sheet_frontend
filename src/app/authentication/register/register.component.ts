@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router} from '@angular/router';
-import {AuthenticationService} from '../../_services';
+import {AuthenticationService} from '../../_services/authentication.service';
 import {passwordMatchValidator} from '../_directives/password-match.directive';
 import {usernameUniqueValidator} from '../_directives/username-unique.directive';
 
