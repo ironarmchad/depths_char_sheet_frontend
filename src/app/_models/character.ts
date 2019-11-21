@@ -1,25 +1,15 @@
 import {Deserializable} from '../_interfaces/deserializable';
+import {Stats} from './stats';
+import {Abilities} from './abilities';
+import {Lore} from './lore';
 
 export class Character implements Deserializable {
   id?: number;
-  owner?: number;
+  ownerId?: number;
   name?: string;
-  summary?: string;
-  charType?: string;
-  gameId?: number;
-  lore?: string;
-  strength?: number;
-  reflex?: number;
-  speed?: number;
-  vitality?: number;
-  awareness?: number;
-  willpower?: number;
-  imagination?: number;
-  attunement?: number;
-  faith?: number;
-  luck?: number;
-  charisma?: number;
-  pointValue?: number;
+  lore?: Lore;
+  stats?: Stats;
+  abilities?: Abilities;
 
   deserialize(input: any): this {
     Object.assign(this, input);

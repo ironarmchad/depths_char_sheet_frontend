@@ -28,7 +28,6 @@ export class CompendiumService {
     return this.http.get(`${environment.apiUrl}/compendium/all`)
       .pipe(map(res => {
         const compendPages = [];
-        console.log(res);
         // tslint:disable-next-line:no-string-literal
         res['pages'].forEach((element) => {
           compendPages.push(new CompendiumPage().deserialize(element));

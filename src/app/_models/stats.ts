@@ -19,34 +19,6 @@ export class Stats implements Deserializable {
     return this;
   }
 
-  getFromCharacter(char: Character) {
-    this.strength = char.strength;
-    this.reflex = char.reflex;
-    this.vitality = char.vitality;
-    this.speed = char.speed;
-    this.awareness = char.awareness;
-    this.willpower = char.willpower;
-    this.imagination = char.imagination;
-    this.attunement = char.attunement;
-    this.faith = char.faith;
-    this.luck = char.luck;
-    this.charisma = char.charisma;
-  }
-
-  updateCharacter(char: Character) {
-    char.strength = this.strength;
-    char.reflex = this.reflex;
-    char.vitality = this.vitality;
-    char.speed = this.speed;
-    char.awareness = this.awareness;
-    char.willpower = this.willpower;
-    char.imagination = this.imagination;
-    char.attunement = this.attunement;
-    char.faith = this.faith;
-    char.luck = this.luck;
-    char.charisma = this.charisma;
-  }
-
   private pointBuyValue(value: number): number {
     if (!value) {
       return 0;
