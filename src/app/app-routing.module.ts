@@ -10,6 +10,7 @@ import {TypographyComponent} from './typography/typography.component';
 
 const routes: Routes = [
   { path: 'typography', component: TypographyComponent},
+  { path: 'character', loadChildren: './character/character.module#CharacterModule'},
   { path: 'compendium', loadChildren: './compendium/compendium.module#CompendiumModule'},
   { path: 'user', component: UserComponent, canActivate: [AuthGuard]},
   { path: 'auth',

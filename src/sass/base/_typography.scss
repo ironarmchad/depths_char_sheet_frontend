@@ -21,3 +21,7 @@
 .legible-justification {
   @include legible-justification;
 }
+
+a {
+  cursor: pointer;
+}

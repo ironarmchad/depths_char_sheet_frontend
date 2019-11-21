@@ -12,10 +12,12 @@
         <a class="nav-link" routerLink="/compendium" routerLinkActive="active" (click)="isMenuCollapsed = true">Compendium</a>
       </li>
       <li class="nav-item">
-        <app-login-mini></app-login-mini>
+        <a class="nav-link" routerLink="/character" routerLinkActive="active" (click)="isMenuCollapsed = true">Character</a>
+      </li>
+      <li class="nav-item cursor-pointer">
+        <app-login-mini (click)="isMenuCollapsed = true"></app-login-mini>
       </li>
     </ul>
-
   </div>
 
 </nav>
