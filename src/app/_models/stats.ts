@@ -33,7 +33,7 @@ export class Stats implements Deserializable {
     }
   }
 
-  calculatePointValue(): number {
+  get pointTotal(): number {
     let sum = 0;
     sum += this.pointBuyValue(this.strength);
     sum += this.pointBuyValue(this.reflex);

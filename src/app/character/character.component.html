@@ -4,6 +4,9 @@
     <div class="card" *ngFor="let character of characters">
       <div class="card-body">
         <div class="card-title text-center">{{ character.name }}</div>
+        <div class="btn-toolbar text-center">
+          <a class="btn btn-sm btn-secondary" routerLink="/character/{{character.id}}/edit">Edit</a>
+        </div>
       </div>
     </div>
   </div>

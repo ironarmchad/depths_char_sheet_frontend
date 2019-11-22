@@ -12,7 +12,12 @@ export class Character implements Deserializable {
   abilities?: Abilities;
 
   deserialize(input: any): this {
-    Object.assign(this, input);
+    this.id = input.id;
+    this.ownerId = input.ownerId;
+    this.name = input.name;
+    this.lore = new Lore().deserialize(input.lore);
+    this.stats = new Stats().deserialize(input.stats);
+    this.abilities = new Abilities().deserialize(input.abilities);
     return this;
   }
 }
