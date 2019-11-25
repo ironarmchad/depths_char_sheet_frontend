@@ -5,7 +5,7 @@
     <input
       id="strength"
       name="strength"
-      [(ngModel)]="character.stats.strength"
+      [(ngModel)]="stats.strength"
       class="form-control"
       style="width: 3em"
       required
@@ -17,7 +17,7 @@
     <input
       id="reflex"
       name="reflex"
-      [(ngModel)]="character.stats.reflex"
+      [(ngModel)]="stats.reflex"
       class="form-control"
       style="width: 3em"
       required
@@ -29,7 +29,7 @@
     <input
       id="vitality"
       name="vitality"
-      [(ngModel)]="character.stats.vitality"
+      [(ngModel)]="stats.vitality"
       class="form-control"
       style="width: 3em"
       required
@@ -41,7 +41,7 @@
     <input
       id="speed"
       name="speed"
-      [(ngModel)]="character.stats.speed"
+      [(ngModel)]="stats.speed"
       class="form-control"
       style="width: 3em"
       required
@@ -53,7 +53,7 @@
     <input
       id="awareness"
       name="awareness"
-      [(ngModel)]="character.stats.awareness"
+      [(ngModel)]="stats.awareness"
       class="form-control"
       style="width: 3em"
       required
@@ -65,7 +65,7 @@
     <input
       id="willpower"
       name="willpower"
-      [(ngModel)]="character.stats.willpower"
+      [(ngModel)]="stats.willpower"
       class="form-control"
       style="width: 3em"
       required
@@ -77,7 +77,7 @@
     <input
       id="imagination"
       name="imagination"
-      [(ngModel)]="character.stats.imagination"
+      [(ngModel)]="stats.imagination"
       class="form-control"
       style="width: 3em"
       required
@@ -89,7 +89,7 @@
     <input
       id="attunement"
       name="attunement"
-      [(ngModel)]="character.stats.attunement"
+      [(ngModel)]="stats.attunement"
       class="form-control"
       style="width: 3em"
       required
@@ -101,7 +101,7 @@
     <input
       id="faith"
       name="faith"
-      [(ngModel)]="character.stats.faith"
+      [(ngModel)]="stats.faith"
       class="form-control"
       style="width: 3em"
       required
@@ -113,7 +113,7 @@
     <input
       id="luck"
       name="luck"
-      [(ngModel)]="character.stats.luck"
+      [(ngModel)]="stats.luck"
       class="form-control"
       style="width: 3em"
       required
@@ -125,7 +125,7 @@
     <input
       id="charisma"
       name="charisma"
-      [(ngModel)]="character.stats.charisma"
+      [(ngModel)]="stats.charisma"
       class="form-control"
       style="width: 3em"
       required
@@ -133,7 +133,7 @@
   </div>
 
   <div class="form-group">
-    <h4><strong>Point Value: </strong> {{character.stats.pointTotal}}</h4>
+    <h4><strong>Point Value: </strong> {{stats.pointTotal}}</h4>
   </div>
 
   <div class="form-group text-center">

@@ -1,0 +1,22 @@
+<div class="card-body">
+  <h4 class="card-title text-center">{{character.name}}</h4>
+  <p class="card-text">{{ character.lore.summary }}</p>
+</div>
+<div class="card-footer text-center">
+  <div class="btn-toolbar">
+    <a class="btn btn-sm btn-secondary" routerLink="/character/{{character.id}}/edit">Edit</a>
+    <div ngbDropdown>
+      <button
+        class="btn btn-sm btn-danger"
+        id="deleteToggle"
+        ngbDropdownToggle>Delete
+      </button>
+      <div ngbDropdownMenu aria-labelledby="deleteConfirm" class="m-1 p-1 mx-auto text-center" style="width: 18rem">
+        <h5>Are you sure you want to delete this character?</h5>
+        <div class="text-center">
+          <button (click)="onDelete()" class="btn btn-sm btn-danger">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

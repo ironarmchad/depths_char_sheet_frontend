@@ -11,6 +11,15 @@ export class Character implements Deserializable {
   stats?: Stats;
   abilities?: Abilities;
 
+  constructor() {
+    this.id = 0;
+    this.ownerId = 0;
+    this.name = '';
+    this.lore = new Lore();
+    this.stats = new Stats();
+    this.abilities = new Abilities();
+  }
+
   deserialize(input: any): this {
     this.id = input.id;
     this.ownerId = input.ownerId;

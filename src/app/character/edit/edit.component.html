@@ -1,7 +1,7 @@
 <div class="container">
   <app-info [character]="character" (save)="onSave()"></app-info>
   <hr>
-  <app-stats [character]="character" (save)="onSave()"></app-stats>
+  <app-stats [stats]="character.stats" (save)="onSave()"></app-stats>
   <hr>
   <app-abilities [abilities]="character.abilities" (save)="onSave()"></app-abilities>
 </div>

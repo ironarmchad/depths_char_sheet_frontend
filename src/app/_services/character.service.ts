@@ -15,6 +15,18 @@ export class CharacterService {
   ) {
   }
 
+  newCharacter(): Observable<number> {
+    return this.http.get<number>(`${environment.apiUrl}/character/new`)
+      .pipe(map(res => {
+        // tslint:disable-next-line:no-string-literal
+        return res['char_id'];
+      }));
+  }
+
+  deleteCharacter(id): Observable<any> {
+    return this.http.delete(`${environment.apiUrl}/character/get/${id}`);
+  }
+
   getCharacter(id): Observable<Character> {
     return this.http.get<Character>(`${environment.apiUrl}/character/get/${id}`)
       .pipe(map(res => {
@@ -34,9 +46,12 @@ export class CharacterService {
       .pipe(map(res => {
         const characters = [];
         // tslint:disable-next-line:no-string-literal
-        res['characters'].forEach((element) => {
-          characters.push(new Character().deserialize(element));
-        });
+        if (res['characters']) {
+          // tslint:disable-next-line:no-string-literal
+          res['characters'].forEach((element) => {
+            characters.push(new Character().deserialize(element));
+          });
+        }
         return characters;
       }));
   }

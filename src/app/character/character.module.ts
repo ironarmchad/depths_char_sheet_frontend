@@ -13,14 +13,17 @@ import { StatAbilitiesComponent } from './edit/abilities/stat-abilities/stat-abi
 import { NaturalAbilityComponent } from './edit/abilities/natural-ability/natural-ability.component';
 import { SuperAbilityComponent } from './edit/abilities/super-ability/super-ability.component';
 import { ItemsComponent } from './edit/abilities/items/items.component';
+import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
+import { CharacterCardComponent } from './character-card/character-card.component';
 
 
 @NgModule({
-  declarations: [CharacterComponent, ProfileComponent, EditComponent, InfoComponent, StatsComponent, AbilitiesComponent, StatAbilitiesComponent, NaturalAbilityComponent, SuperAbilityComponent, ItemsComponent],
+  declarations: [CharacterComponent, ProfileComponent, EditComponent, InfoComponent, StatsComponent, AbilitiesComponent, StatAbilitiesComponent, NaturalAbilityComponent, SuperAbilityComponent, ItemsComponent, CharacterCardComponent],
   imports: [
     CommonModule,
     CharacterRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbDropdownModule
   ]
 })
 export class CharacterModule { }

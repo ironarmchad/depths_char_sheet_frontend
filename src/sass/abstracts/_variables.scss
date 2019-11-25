@@ -1,18 +1,40 @@
-// Screen width breakpoints
-$min_width: 400;
-$max_width: 800;
+// Change scale
 
-// Font size breakpoints
-$min_font: 16;
-$max_font: 24;
+$mod_1: 1.067;
+$mod_2: 1.333;
 
-// Line length breakpoints
-$min_length: 18rem;
-$max_length: 66em;
 
-// Header Scalers
-$h1: 2rem;
-$h2: 1.5rem;
-$h3: 1.25rem;
-$h4: 1rem;
-$h5: .875rem;
+// Calculate Modular Scale
+// You don't need to calculate this with Sass
+// You can use values from http://type-scale.com/
+// Or random values :)
+
+$h1-min: $mod_1 * $mod_1 * $mod_1 * $mod_1 * 1rem;
+$h1-max: $mod_2 * $mod_2 * $mod_2 * $mod_2 * 1rem;
+
+$h2-min: $mod_1 * $mod_1 * $mod_1 * 1rem;
+$h2-max: $mod_2 * $mod_2 * $mod_2 * 1rem;
+
+$h3-min: $mod_1 * $mod_1 * 1rem;
+$h3-max: $mod_2 * $mod_2 * 1rem;
+
+$h4-min: $mod_1 * 1rem;
+$h4-max: $mod_2 * 1rem;
+
+$h5-min: 1rem;
+$h5-max: 1rem;
+
+$h6-min: (1rem / $mod_1);
+$h6-max: (1rem / $mod_2);
+
+$display4-min: 1rem + $h1-min;
+$display4-max: 1rem + $h1-max;
+
+$display3-min: $display4-min + 0.5rem;
+$display3-max: $display4-max + 0.5rem;
+
+$display2-min: $display3-min + 0.5rem;
+$display2-max: $display3-max + 0.5rem;
+
+$display1-min: $display2-min + 0.5rem;
+$display1-max: $display2-max + 0.5rem;

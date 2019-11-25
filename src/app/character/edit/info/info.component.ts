@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import {Character} from '../../../_models/character';
-import {CharacterService} from '../../../_services/character.service';
 
 @Component({
   selector: 'app-info',
@@ -8,19 +7,16 @@ import {CharacterService} from '../../../_services/character.service';
   styleUrls: ['./info.component.scss']
 })
 export class InfoComponent implements OnInit {
-  @Input() character: Character;
+  @Input() character: Character = new Character();
   @Output() save = new EventEmitter();
 
   constructor(
-    private charServ: CharacterService
   ) {
   }
 
   ngOnInit() {
   }
 
-  onSubmit() {
-  }
 
   saveState() {
     this.save.emit();

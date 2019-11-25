@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Character} from '../../../_models/character';
+import {Stats} from '../../../_models/stats';
 
 @Component({
   selector: 'app-stats',
@@ -7,7 +7,7 @@ import {Character} from '../../../_models/character';
   styleUrls: ['./stats.component.scss']
 })
 export class StatsComponent implements OnInit {
-  @Input() character: Character;
+  @Input() stats: Stats;
   @Output() save = new EventEmitter<any>();
 
   constructor() {
