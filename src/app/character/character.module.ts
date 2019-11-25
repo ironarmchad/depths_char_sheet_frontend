@@ -9,10 +9,14 @@ import { InfoComponent } from './edit/info/info.component';
 import { StatsComponent } from './edit/stats/stats.component';
 import { AbilitiesComponent } from './edit/abilities/abilities.component';
 import {FormsModule} from '@angular/forms';
+import { StatAbilitiesComponent } from './edit/abilities/stat-abilities/stat-abilities.component';
+import { NaturalAbilityComponent } from './edit/abilities/natural-ability/natural-ability.component';
+import { SuperAbilityComponent } from './edit/abilities/super-ability/super-ability.component';
+import { ItemsComponent } from './edit/abilities/items/items.component';
 
 
 @NgModule({
-  declarations: [CharacterComponent, ProfileComponent, EditComponent, InfoComponent, StatsComponent, AbilitiesComponent],
+  declarations: [CharacterComponent, ProfileComponent, EditComponent, InfoComponent, StatsComponent, AbilitiesComponent, StatAbilitiesComponent, NaturalAbilityComponent, SuperAbilityComponent, ItemsComponent],
   imports: [
     CommonModule,
     CharacterRoutingModule,

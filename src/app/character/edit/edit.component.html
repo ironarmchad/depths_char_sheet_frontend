@@ -3,5 +3,5 @@
   <hr>
   <app-stats [character]="character" (save)="onSave()"></app-stats>
   <hr>
-  <app-abilities [character]="character" (save)="onSave()"></app-abilities>
+  <app-abilities [abilities]="character.abilities" (save)="onSave()"></app-abilities>
 </div>
