@@ -19,9 +19,9 @@ export class ViewComponent implements OnInit {
 
   ngOnInit() {
     const params = this.route.snapshot.params;
-    const {id} = params;
+    const {title} = params;
 
-    this.compServ.getCompendium(id).subscribe(res => {
+    this.compServ.getCompendium(title).subscribe(res => {
       this.compendiumPage = res;
     });
   }

@@ -16,8 +16,8 @@ export class CompendiumService {
   ) {
   }
 
-  getCompendium(id) {
-    return this.http.get<CompendiumPage>(`${environment.apiUrl}/compendium/get/${id}`)
+  getCompendium(title) {
+    return this.http.get<CompendiumPage>(`${environment.apiUrl}/compendium/get/${title}`)
       .pipe(map(res => {
         const newCompend = new CompendiumPage().deserialize(res);
         return newCompend;
