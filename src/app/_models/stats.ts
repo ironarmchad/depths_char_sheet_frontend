@@ -1,4 +1,3 @@
-import {Character} from './character';
 import {Deserializable} from '../_interfaces/deserializable';
 
 export class Stats implements Deserializable {
@@ -13,6 +12,8 @@ export class Stats implements Deserializable {
   faith: number;
   luck: number;
   charisma: number;
+  hpCurrent: number;
+  fpCurrent: number;
 
   deserialize(input: any): this {
     Object.assign(this, input);
@@ -47,5 +48,45 @@ export class Stats implements Deserializable {
     sum += this.pointBuyValue(this.luck);
     sum += this.pointBuyValue(this.charisma);
     return sum;
+  }
+
+  private statMajors(statValue: number): number {
+    if (statValue > 6) {
+      return statValue - 6;
+    }
+
+    return 0;
+  }
+
+  private totalMajorStatUps(): number {
+    let sum = 0;
+
+    sum += this.statMajors(this.strength);
+    sum += this.statMajors(this.reflex);
+    sum += this.statMajors(this.vitality);
+    sum += this.statMajors(this.speed);
+    sum += this.statMajors(this.awareness);
+    sum += this.statMajors(this.willpower);
+    sum += this.statMajors(this.attunement);
+    sum += this.statMajors(this.imagination);
+    sum += this.statMajors(this.faith);
+    sum += this.statMajors(this.luck);
+    sum += this.statMajors(this.charisma);
+
+    return sum - 1;
+  }
+
+  get totalHp(): number {
+    const statUps = this.totalMajorStatUps();
+
+    if (statUps > 0) {
+      return this.vitality * 20 + 10 * this.totalMajorStatUps();
+    } else {
+      return this.vitality * 20;
+    }
+  }
+
+  get totalFP(): number {
+    return Math.max(this.awareness, this.willpower, this.attunement, this.imagination, this.faith, this.luck, this.charisma) * 10;
   }
 }

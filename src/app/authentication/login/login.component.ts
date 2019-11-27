@@ -10,7 +10,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class LoginComponent implements OnInit {
   username: string;
   password: string;
-  confirm: string;
   returnUrl: string;
   error = '';
 

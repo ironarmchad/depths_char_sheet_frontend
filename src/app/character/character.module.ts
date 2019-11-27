@@ -15,10 +15,15 @@ import { SuperAbilityComponent } from './edit/abilities/super-ability/super-abil
 import { ItemsComponent } from './edit/abilities/items/items.component';
 import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 import { CharacterCardComponent } from './character-card/character-card.component';
+import { StatLineComponent } from './profile/stat-line/stat-line.component';
+import { DisplayStatAbilityComponent } from './profile/display-stat-ability/display-stat-ability.component';
+import { DisplayNaturalAbilityComponent } from './profile/display-natural-ability/display-natural-ability.component';
+import { DisplaySuperAbilityComponent } from './profile/display-super-ability/display-super-ability.component';
+import { DisplayItemComponent } from './profile/display-item/display-item.component';
 
 
 @NgModule({
-  declarations: [CharacterComponent, ProfileComponent, EditComponent, InfoComponent, StatsComponent, AbilitiesComponent, StatAbilitiesComponent, NaturalAbilityComponent, SuperAbilityComponent, ItemsComponent, CharacterCardComponent],
+  declarations: [CharacterComponent, ProfileComponent, EditComponent, InfoComponent, StatsComponent, AbilitiesComponent, StatAbilitiesComponent, NaturalAbilityComponent, SuperAbilityComponent, ItemsComponent, CharacterCardComponent, StatLineComponent, DisplayStatAbilityComponent, DisplayNaturalAbilityComponent, DisplaySuperAbilityComponent, DisplayItemComponent],
   imports: [
     CommonModule,
     CharacterRoutingModule,

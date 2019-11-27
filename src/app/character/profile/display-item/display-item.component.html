@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">{{item.name}}</h4>
+    <p class="card-text">{{item.description}}</p>
+    <div *ngIf="item.usesPerDay" class="form-group form-inline">
+      <label for="uses" class="mr-2">Uses Per Day</label>
+      <input
+        id="uses"
+        name="uses"
+        [(ngModel)]="item.usedThisDay"
+        type="number"
+        min="0"
+        [max]="item.usesPerDay"
+        class="form-control mr-2"
+        style="width: 4em"
+      > / {{item.usesPerDay}}
+
+    </div>
+  </div>
+</div>

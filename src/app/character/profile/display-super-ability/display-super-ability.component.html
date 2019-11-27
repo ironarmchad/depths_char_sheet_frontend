@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">
+      {{superAbility.name}}
+    </h4>
+    <p class="card-text">{{superAbility.description}}</p>
+    <div *ngIf="superAbility.usesPerDay" class="form-group form-inline">
+      <label for="uses" class="mr-2">Uses Per Day</label>
+      <input
+        id="uses"
+        name="uses"
+        [(ngModel)]="superAbility.usedThisDay"
+        type="number"
+        min="0"
+        [max]="superAbility.usesPerDay"
+        class="form-control mr-2"
+      > / {{superAbility.usesPerDay}}
+    </div>
+
+    <div *ngIf="superAbility.fpUse" class="form-group form-inline">
+      <label for="fpuse" class="mr-2">FP Use</label>
+      <input
+        id="fpuse"
+        name="fpuse"
+        [value]="superAbility.fpUse"
+        class="form-control mr-2"
+        style="width: 4em"
+        readonly
+      >
+      <button (click)="onUseAbility()" class="btn btn-sm btn-primary">Use</button>
+    </div>
+  </div>
+</div>

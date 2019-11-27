@@ -31,27 +31,6 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="confirm">Confirm Password</label>
-      <input type="password"
-             class="form-control"
-             id="confirm"
-             name="confirm"
-             #form_confirm="ngModel"
-             [(ngModel)]="confirm"
-             required>
-      <div [hidden]="form_confirm.valid || form_confirm.pristine"
-           class="alert alert-danger">
-        Confirmation is required.
-      </div>
-    </div>
-
-    <div *ngIf="form_password.touched && form_confirm.touched">
-      <div *ngIf="password !== confirm" class="alert alert-danger">
-        Password and Confirmation don't match.
-      </div>
-    </div>
-
     <div *ngIf="error" class="alert alert-danger">
       {{error}}
     </div>
@@ -60,7 +39,7 @@
       <button
         type="submit"
         class="btn btn-primary"
-        [disabled]="!loginForm.form.valid || password !== confirm"
+        [disabled]="!loginForm.form.valid"
       >Login
       </button>
     </div>

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3 d-print-none">
   <a routerLink="/" class="navbar-brand">Depths RPG</a>
 
   <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
@@ -19,5 +19,8 @@
       </li>
     </ul>
   </div>
-
 </nav>
+
+<div class="d-none d-print-block">
+  <h1>Depths Character Sheet</h1>
+</div>
