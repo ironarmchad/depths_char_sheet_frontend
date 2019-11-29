@@ -26,7 +26,9 @@ export class LoginMiniComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.user = this.authenticationService.currentUserValue;
+    this.authenticationService.currentUser.subscribe(next => {
+      this.user = next;
+    });
 
     // Login Form
     this.loginForm = this.formBuilder.group({
