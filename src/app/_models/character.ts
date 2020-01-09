@@ -6,6 +6,7 @@ import {Lore} from './lore';
 export class Character implements Deserializable {
   id?: number;
   ownerId?: number;
+  viewers?: number[];
   name?: string;
   lore?: Lore;
   stats?: Stats;
@@ -14,6 +15,7 @@ export class Character implements Deserializable {
   constructor() {
     this.id = 0;
     this.ownerId = 0;
+    this.viewers = [];
     this.name = '';
     this.lore = new Lore();
     this.stats = new Stats();
@@ -23,6 +25,7 @@ export class Character implements Deserializable {
   deserialize(input: any): this {
     this.id = input.id;
     this.ownerId = input.ownerId;
+    this.viewers = input.viewers;
     this.name = input.name;
     this.lore = new Lore().deserialize(input.lore);
     this.stats = new Stats().deserialize(input.stats);

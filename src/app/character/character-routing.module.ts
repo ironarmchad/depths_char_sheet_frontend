@@ -4,12 +4,18 @@ import {CharacterComponent} from './character.component';
 import {AuthGuard} from '../_guards/auth.guard';
 import {ProfileComponent} from './profile/profile.component';
 import {EditComponent} from './edit/edit.component';
+import {ViewComponent} from './view/view.component';
 
 
 const routes: Routes = [
   {
     path: ':id/edit',
     component: EditComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: ':id/view',
+    component: ViewComponent,
     canActivate: [AuthGuard]
   },
   {

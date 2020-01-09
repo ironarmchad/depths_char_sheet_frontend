@@ -1,43 +1,51 @@
-html {
-  @include fluid-type(font-size, 320px, 1366px, 16px, 24px);
+@media screen {
+  html {
+    @include fluid-type(font-size, 320px, 1366px, 16px, 24px);
+  }
+
+  h1, .h1 {
+    @include fluid-type(font-size, 320px, 1366px, $h1-min, $h1-max);
+  }
+
+  h2, .h2 {
+    @include fluid-type(font-size, 320px, 1366px, $h2-min, $h2-max);
+  }
+
+  h3, .h3{
+    @include fluid-type(font-size, 320px, 1366px, $h3-min, $h3-max);
+  }
+
+  h4, .h4 {
+    @include fluid-type(font-size, 320px, 1366px, $h4-min, $h4-max);
+  }
+
+  h5, .h5 {
+    @include fluid-type(font-size, 320px, 1366px, $h5-min, $h5-max);
+  }
+
+  h6, .h6 {
+    @include fluid-type(font-size, 320px, 1366px, $h6-min, $h6-max);
+  }
+
+  .display-4 {
+    @include fluid-type(font-size, 320px, 1366px, $display4-min, $display4-max);
+  }
+
+  .display-3 {
+    @include fluid-type(font-size, 320px, 1366px, $display3-min, $display3-max);
+  }
+
+  .display-2 {
+    @include fluid-type(font-size, 320px, 1366px, $display2-min, $display2-max);
+  }
+
+  .display-1 {
+    @include fluid-type(font-size, 320px, 1366px, $display1-min, $display1-max);
+  }
 }
 
-h1, .h1 {
-  @include fluid-type(font-size, 320px, 1366px, $h1-min, $h1-max);
-}
-
-h2, .h2 {
-  @include fluid-type(font-size, 320px, 1366px, $h2-min, $h2-max);
-}
-
-h3, .h3{
-  @include fluid-type(font-size, 320px, 1366px, $h3-min, $h3-max);
-}
-
-h4, .h4 {
-  @include fluid-type(font-size, 320px, 1366px, $h4-min, $h4-max);
-}
-
-h5, .h5 {
-  @include fluid-type(font-size, 320px, 1366px, $h5-min, $h5-max);
-}
-
-h6, .h6 {
-  @include fluid-type(font-size, 320px, 1366px, $h6-min, $h6-max);
-}
-
-.display-4 {
-  @include fluid-type(font-size, 320px, 1366px, $display4-min, $display4-max);
-}
-
-.display-3 {
-  @include fluid-type(font-size, 320px, 1366px, $display3-min, $display3-max);
-}
-
-.display-2 {
-  @include fluid-type(font-size, 320px, 1366px, $display2-min, $display2-max);
-}
-
-.display-1 {
-  @include fluid-type(font-size, 320px, 1366px, $display1-min, $display1-max);
+@media print{
+  html{
+    text-size: 12pt;
+  }
 }

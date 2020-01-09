@@ -15,6 +15,22 @@ export class Stats implements Deserializable {
   hpCurrent: number;
   fpCurrent: number;
 
+  constructor() {
+    this.strength = 0;
+    this.reflex = 0;
+    this.vitality = 0;
+    this.speed = 0;
+    this.awareness = 0;
+    this.willpower = 0;
+    this.imagination = 0;
+    this.attunement = 0;
+    this.faith = 0;
+    this.luck = 0;
+    this.charisma = 0;
+    this.hpCurrent = 0;
+    this.fpCurrent = 0;
+  }
+
   deserialize(input: any): this {
     Object.assign(this, input);
     return this;
@@ -32,6 +48,22 @@ export class Stats implements Deserializable {
     } else {
       return 15 + 10 * (value - 6);
     }
+  }
+
+  get statList(): string[] {
+    return [
+      'Strength',
+      'Reflex',
+      'Vitality',
+      'Speed',
+      'Awareness',
+      'Willpower',
+      'Imagination',
+      'Attunement',
+      'Faith',
+      'Luck',
+      'Charisma'
+    ];
   }
 
   get pointTotal(): number {

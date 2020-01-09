@@ -55,4 +55,19 @@ export class CharacterService {
         return characters;
       }));
   }
+
+  getCharacterViewable(): Observable<Character[]> {
+    return this.http.get<Character[]>(`${environment.apiUrl}/character/viewable`)
+      .pipe(map(res => {
+        const characters = [];
+        // tslint:disable-next-line:no-string-literal
+        if (res['characters']) {
+          // tslint:disable-next-line:no-string-literal
+          res['characters'].forEach((element) => {
+            characters.push(new Character().deserialize(element));
+          });
+        }
+        return characters;
+      }));
+  }
 }
