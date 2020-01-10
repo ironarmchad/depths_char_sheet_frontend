@@ -21,10 +21,11 @@ import {DisplayNaturalAbilityComponent} from './profile/display-natural-ability/
 import {DisplaySuperAbilityComponent} from './profile/display-super-ability/display-super-ability.component';
 import {DisplayItemComponent} from './profile/display-item/display-item.component';
 import {ViewComponent} from './view/view.component';
+import { AbilityCardComponent } from './view/ability-card/ability-card.component';
 
 
 @NgModule({
-  declarations: [CharacterComponent, ProfileComponent, EditComponent, InfoComponent, StatsComponent, AbilitiesComponent, StatAbilitiesComponent, NaturalAbilityComponent, SuperAbilityComponent, ItemsComponent, CharacterCardComponent, StatLineComponent, DisplayStatAbilityComponent, DisplayNaturalAbilityComponent, DisplaySuperAbilityComponent, DisplayItemComponent, ViewComponent],
+  declarations: [CharacterComponent, ProfileComponent, EditComponent, InfoComponent, StatsComponent, AbilitiesComponent, StatAbilitiesComponent, NaturalAbilityComponent, SuperAbilityComponent, ItemsComponent, CharacterCardComponent, StatLineComponent, DisplayStatAbilityComponent, DisplayNaturalAbilityComponent, DisplaySuperAbilityComponent, DisplayItemComponent, ViewComponent, AbilityCardComponent],
   imports: [
     CommonModule,
     CharacterRoutingModule,
