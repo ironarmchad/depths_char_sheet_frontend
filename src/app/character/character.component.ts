@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 })
 export class CharacterComponent implements OnInit {
   characters: Character[] = [];
+  viewable: Character[] = [];
 
   constructor(
     private charServ: CharacterService,
@@ -19,6 +20,10 @@ export class CharacterComponent implements OnInit {
 
   ngOnInit() {
     this.loadCharacters();
+
+    this.charServ.getCharacterViewable().subscribe(res => {
+      this.viewable = res;
+    });
   }
 
   loadCharacters() {

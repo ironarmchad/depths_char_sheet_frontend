@@ -23,4 +23,21 @@
   <div *ngIf="characters.length === 0" class="h2 text-center">
     You have no characters yet.
   </div>
+
+  <div *ngIf="viewable.length > 0">
+    <h2 class="text-center">Your Viewable Characters</h2>
+    <div class="card-columns">
+      <div *ngFor="let character of viewable" class="card" style="max-width: 18em">
+        <div class="card-header text-center">
+          <h4 class="card-title">{{ character.name }}</h4>
+        </div>
+        <p class="card-body card-text">
+          {{ character.lore.summary }}
+        </p>
+        <div class="card-footer text-center">
+          <a class="btn btn-sm btn-secondary" routerLink="/character/{{character.id}}/view">View</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

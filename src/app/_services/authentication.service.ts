@@ -19,6 +19,10 @@ export class AuthenticationService {
     return this.currentUserSubject.value;
   }
 
+  getUserList() {
+    return this.http.get<any>(`${environment.apiUrl}/user/all`);
+  }
+
   checkForUsername(username: string) {
     return this.http.post<any>(`${environment.apiUrl}/user/available`, {username});
   }

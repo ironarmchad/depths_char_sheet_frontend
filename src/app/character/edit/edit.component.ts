@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Character} from '../../_models/character';
 import {CharacterService} from '../../_services/character.service';
 import {ActivatedRoute} from '@angular/router';
+import {AuthenticationService} from '../../_services/authentication.service';
 
 @Component({
   selector: 'app-edit',

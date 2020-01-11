@@ -23,7 +23,6 @@ export class ViewComponent implements OnInit {
 
     this.charServ.getCharacter(id).subscribe(res => {
       this.character = res;
-      console.log(this.character);
     });
   }
 

@@ -8,7 +8,7 @@ import {EditComponent} from './edit/edit.component';
 import {InfoComponent} from './edit/info/info.component';
 import {StatsComponent} from './edit/stats/stats.component';
 import {AbilitiesComponent} from './edit/abilities/abilities.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {StatAbilitiesComponent} from './edit/abilities/stat-abilities/stat-abilities.component';
 import {NaturalAbilityComponent} from './edit/abilities/natural-ability/natural-ability.component';
 import {SuperAbilityComponent} from './edit/abilities/super-ability/super-ability.component';
@@ -21,15 +21,17 @@ import {DisplayNaturalAbilityComponent} from './profile/display-natural-ability/
 import {DisplaySuperAbilityComponent} from './profile/display-super-ability/display-super-ability.component';
 import {DisplayItemComponent} from './profile/display-item/display-item.component';
 import {ViewComponent} from './view/view.component';
-import { AbilityCardComponent } from './view/ability-card/ability-card.component';
+import {AbilityCardComponent} from './view/ability-card/ability-card.component';
+import {ShareComponent} from './share/share.component';
 
 
 @NgModule({
-  declarations: [CharacterComponent, ProfileComponent, EditComponent, InfoComponent, StatsComponent, AbilitiesComponent, StatAbilitiesComponent, NaturalAbilityComponent, SuperAbilityComponent, ItemsComponent, CharacterCardComponent, StatLineComponent, DisplayStatAbilityComponent, DisplayNaturalAbilityComponent, DisplaySuperAbilityComponent, DisplayItemComponent, ViewComponent, AbilityCardComponent],
+  declarations: [CharacterComponent, ProfileComponent, EditComponent, InfoComponent, StatsComponent, AbilitiesComponent, StatAbilitiesComponent, NaturalAbilityComponent, SuperAbilityComponent, ItemsComponent, CharacterCardComponent, StatLineComponent, DisplayStatAbilityComponent, DisplayNaturalAbilityComponent, DisplaySuperAbilityComponent, DisplayItemComponent, ViewComponent, AbilityCardComponent, ShareComponent],
   imports: [
     CommonModule,
     CharacterRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     NgbDropdownModule
   ]
 })
