@@ -33,6 +33,7 @@ export class ShareComponent implements OnInit {
 
     this.charServ.getCharacter(id).subscribe(res => {
       this.character = res;
+      console.log(res);
 
       if (this.character.viewers) {
         this.updateSharedList();
