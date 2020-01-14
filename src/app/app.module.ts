@@ -14,6 +14,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {UserComponent} from './user/user.component';
 import {OutOfDomainComponent} from './out-of-domain/out-of-domain.component';
 import {TypographyComponent} from './typography/typography.component';
+import { GuidesModule } from './guides/guides.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {TypographyComponent} from './typography/typography.component';
     ReactiveFormsModule,
     NgbAlertModule,
     NgbDropdownModule,
-    NavbarModule
+    NavbarModule,
+    GuidesModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
