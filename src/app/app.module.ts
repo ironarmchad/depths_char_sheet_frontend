@@ -34,7 +34,7 @@ import { GuidesModule } from './guides/guides.module';
     NgbAlertModule,
     NgbDropdownModule,
     NavbarModule,
-    GuidesModule
+    // GuidesModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},

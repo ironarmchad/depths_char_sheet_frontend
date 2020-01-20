@@ -10,6 +10,11 @@ import {ShareComponent} from './share/share.component';
 
 const routes: Routes = [
   {
+    path: ':id',
+    component: ProfileComponent
+
+  },
+  {
     path: ':id/share',
     component: ShareComponent,
     canActivate: [AuthGuard]

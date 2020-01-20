@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CharacterService} from '../_services/character.service';
 import {Character} from '../_models/character';
 import {Router} from '@angular/router';
+import {CurrentCharacterService} from './_current-character.service';
 
 @Component({
   selector: 'app-character',
@@ -14,6 +15,7 @@ export class CharacterComponent implements OnInit {
 
   constructor(
     private charServ: CharacterService,
+    private currentChar: CurrentCharacterService,
     private router: Router
   ) {
   }

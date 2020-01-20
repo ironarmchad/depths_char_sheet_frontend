@@ -6,6 +6,7 @@ import {GuidesComponent} from './guides.component';
 
 
 const routes: Routes = [
+  /*
   {
     path: '',
     component: GuidesComponent,
@@ -25,6 +26,7 @@ const routes: Routes = [
       }
     ]
   }
+  */
 ];
 
 @NgModule({
