@@ -14,6 +14,9 @@ export class Stats implements Deserializable {
   charisma: number;
   hpCurrent: number;
   fpCurrent: number;
+  method: string;
+  xpTotal: number;
+  xpCurrent: number;
 
   constructor() {
     this.strength = 0;
@@ -29,6 +32,9 @@ export class Stats implements Deserializable {
     this.charisma = 0;
     this.hpCurrent = 0;
     this.fpCurrent = 0;
+    this.method = '';
+    this.xpTotal = 0;
+    this.xpCurrent = 0;
   }
 
   deserialize(input: any): this {
@@ -57,6 +63,27 @@ export class Stats implements Deserializable {
       'Vitality',
       'Speed',
       'Awareness',
+      'Willpower',
+      'Imagination',
+      'Attunement',
+      'Faith',
+      'Luck',
+      'Charisma'
+    ];
+  }
+
+  get physList(): string[] {
+    return [
+      'Strength',
+      'Reflex',
+      'Vitality',
+      'Speed',
+      'Awareness'
+    ];
+  }
+
+  get mentList(): string[] {
+    return [
       'Willpower',
       'Imagination',
       'Attunement',

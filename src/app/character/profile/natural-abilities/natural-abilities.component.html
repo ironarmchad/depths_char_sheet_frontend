@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="card mb-5">
+    <div class="card-header text-center">
+      <h3 class="card-title">Natural Abilities</h3>
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        You have {{ current.character.abilities.naturalSlots }} slots worth of natural abilities.
+      </p>
+      <div class="btn-toolbar justify-content-center">
+        <a class="btn btn-primary" routerLink="/character/{{ current.character.id }}/naturals/edit">Edit</a>
+      </div>
+    </div>
+  </div>
+  <div *ngFor="let ability of current.character.abilities.naturalAbilities" class="card mb-3">
+    <div class="card-header text-center">
+      <h4 class="text-center card-title">{{ ability.name }}</h4>
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{ ability.description }}</p>
+    </div>
+    <div class="card-footer text-center">
+      <p class="card-text">Slots: {{ ability.slots }}</p>
+    </div>
+  </div>
+</div>

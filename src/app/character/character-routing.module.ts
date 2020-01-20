@@ -1,43 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {CharacterComponent} from './character.component';
-import {AuthGuard} from '../_guards/auth.guard';
+import {AllComponent} from './all/all.component';
 import {ProfileComponent} from './profile/profile.component';
-import {EditComponent} from './edit/edit.component';
-import {ViewComponent} from './view/view.component';
-import {ShareComponent} from './share/share.component';
 
 
 const routes: Routes = [
   {
+    path: 'all',
+    component: AllComponent
+  },
+  {
     path: ':id',
-    component: ProfileComponent
-
-  },
-  {
-    path: ':id/share',
-    component: ShareComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: ':id/edit',
-    component: EditComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: ':id/view',
-    component: ViewComponent,
-    canActivate: [AuthGuard]
+    loadChildren: () => import('./profile/profile.module').then(mod => mod.ProfileModule)
   },
   {
     path: ':id',
-    component: ProfileComponent,
-    canActivate: [AuthGuard]
+    component: ProfileComponent
   },
   {
     path: '',
-    component: CharacterComponent,
-    canActivate: [AuthGuard]
+    redirectTo: 'all'
   }
 ];
 

@@ -3,6 +3,7 @@ import {Deserializable} from '../_interfaces/deserializable';
 export class Ability implements Deserializable {
   name?: string;
   description?: string;
+  slots?: number;
 
   deserialize(input: any): this {
     Object.assign(this, input);
@@ -11,23 +12,23 @@ export class Ability implements Deserializable {
 }
 
 export class StatAbility extends Ability {
+  slots = 0;
   usesPerDay: number;
   usedThisDay: number;
 }
 
 export class NaturalAbility extends Ability {
-  slots?: number;
 }
 
 export class SuperAbility extends Ability {
   slots = 1;
   fpUse?: number;
-  usesPerDay: number;
-  usedThisDay: number;
+  usesPerDay?: number;
+  usedThisDay?: number;
 }
 
 export class Item extends Ability {
-  slots?: number;
+  fpUse?: number;
   usesPerDay?: number;
   usedThisDay?: number;
 }

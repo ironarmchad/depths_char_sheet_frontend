@@ -1,0 +1,8 @@
+<div class="container">
+  <h2>All Characters</h2>
+  <ul>
+    <li *ngFor="let character of characters">
+      <a routerLink="/character/{{ character.id }}">{{ character.name }}</a>
+    </li>
+  </ul>
+</div>

@@ -5,9 +5,7 @@ import {Character} from '../_models/character';
   providedIn: 'root'
 })
 export class CurrentCharacterService {
-  character: Character;
+  currentCharacter: Character = new Character();
 
-  constructor() {
-    this.character = new Character();
-  }
+  constructor() { }
 }

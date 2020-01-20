@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {Character} from '../../_models/character';
 import {CharacterService} from '../../_services/character.service';
-import {CurrentCharacterService} from '../_current-character.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -9,11 +9,11 @@ import {CurrentCharacterService} from '../_current-character.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  character: Character = new Character();
 
   constructor(
-    private route: ActivatedRoute,
     private charServ: CharacterService,
-    private current: CurrentCharacterService
+    private route: ActivatedRoute
   ) {
   }
 
@@ -21,10 +21,17 @@ export class ProfileComponent implements OnInit {
     const params = this.route.snapshot.params;
     const {id} = params;
 
-
     this.charServ.getCharacter(id).subscribe(res => {
-      this.current.character = res;
+      this.character = res;
     });
+  }
+
+  onSave() {
+    this.charServ.patchCharacter(this.character).subscribe();
+  }
+
+  useFpAbility(usedFp: number) {
+    this.character.stats.fpCurrent -= usedFp;
   }
 
 }

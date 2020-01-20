@@ -27,4 +27,28 @@ export class Abilities implements Deserializable {
 
     return this;
   }
+
+  get naturalSlots(): number {
+    let slotTotal = 0;
+    this.naturalAbilities.forEach(ability => {
+      slotTotal += ability.slots;
+    });
+    return slotTotal;
+  }
+
+  get superSlots(): number {
+    return this.superAbilities.length;
+  }
+
+  get itemSlots(): number {
+    let slotTotal = 0;
+    this.items.forEach(item => {
+      slotTotal += item.slots;
+    });
+    return slotTotal;
+  }
+
+  get totalSlots(): number {
+    return this.naturalSlots + this.superSlots + this.itemSlots;
+  }
 }
