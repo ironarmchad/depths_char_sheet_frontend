@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'user', component: UserComponent, canActivate: [AuthGuard]},
   {
     path: 'auth',
-    loadChildren: './authentication/authentication.module#AuthenticationModule'
+    loadChildren: () => import('./authentication/authentication.module').then(mod => mod.AuthenticationModule)
   },
   {
     path: 'character',
