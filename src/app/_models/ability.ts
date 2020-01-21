@@ -18,6 +18,11 @@ export class StatAbility extends Ability {
 }
 
 export class NaturalAbility extends Ability {
+
+  constructor() {
+    super();
+    this.slots = 1;
+  }
 }
 
 export class SuperAbility extends Ability {
@@ -31,5 +36,11 @@ export class Item extends Ability {
   fpUse?: number;
   usesPerDay?: number;
   usedThisDay?: number;
+
+  constructor() {
+    super();
+    this.slots = 1;
+  }
+
 }
 

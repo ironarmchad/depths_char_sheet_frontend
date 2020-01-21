@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="card mb-3">
+    <div class="card-header">
+      <h3 class="card-title text-center">Supernatural Abilities</h3>
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        You have <strong>{{ current.character.abilities.superSlots }} Slots</strong> used by Super Abilities.
+      </p>
+
+      <div class="btn-toolbar justify-content-center">
+        <a
+          class="btn btn-primary"
+          routerLink="/character/{{ current.character.id }}/supers/edit"
+        >Edit</a>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="card mb-3"
+    *ngFor="let super of current.character.abilities.superAbilities; index as i"
+  >
+    <div class="card-header">
+      <h4 class="card-title text-center">{{ super.name }}</h4>
+    </div>
+
+    <div class="card-body">
+      <p class="card-text">
+        {{ super.description }}
+      </p>
+    </div>
+
+    <div class="card-footer">
+      <div
+        *ngIf="super.fpUse"
+        class="input-group mb-1 mx-auto"
+        style="max-width: 12em"
+      >
+        <div class="input-group-prepend">
+          <span class="input-group-text">FP Use: </span>
+        </div>
+        <input
+          class="form-control text-center"
+          readonly
+          [value]="super.fpUse"
+        >
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="useFp(super.fpUse)"
+          >Use</button>
+        </div>
+      </div>
+
+      <table class="mx-auto" *ngIf="super.usesPerDay">
+        <tr>
+          <th class="pr-2">
+            Used Today:
+          </th>
+          <td>
+            <input
+              class="form-control text-center"
+              style="width: 4em"
+              type="number"
+              min="0"
+              [max]="super.usesPerDay"
+              id="usesThisDay{{i}}"
+              name="usesThisDay{{i}}"
+              [(ngModel)]="super.usedThisDay"
+            >
+          </td>
+          <td class="px-2">
+            of
+          </td>
+          <td>
+            <input
+              class="form-control text-center"
+              style="width: 4em"
+              readonly
+              [value]="super.usesPerDay"
+            >
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</div>

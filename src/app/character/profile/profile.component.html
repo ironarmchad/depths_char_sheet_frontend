@@ -1,5 +1,71 @@
 <div class="container mb-4">
   <h2 class="text-center">{{ current.character.name }}</h2>
+
+  <div class="card mb-3">
+    <div class="card-header text-center">
+      <h3 class="card-title">Basic Stats</h3>
+    </div>
+    <div class="card-body d-flex flex-wrap flex-row justify-content-around">
+      <table class="mr-3">
+        <tr>
+          <th class="pr-2">
+            HP:
+          </th>
+          <td>
+            <input
+              class="form-control text-center"
+              style="width: 6em"
+              type="number"
+              id="hpCurrent"
+              name="hpCurrent"
+              [(ngModel)]="current.character.stats.hpCurrent"
+            >
+          </td>
+          <td class="px-1">
+            of
+          </td>
+          <td>
+            <input
+              class="form-control text-center"
+              style="width: 6em"
+              readonly
+              value="{{ current.character.stats.totalHp }}"
+            >
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <th class="pr-2">
+            FP:
+          </th>
+          <td>
+            <input
+              class="form-control text-center"
+              style="width: 6em"
+              type="number"
+              id="fpCurrent"
+              name="fpCurrent"
+              [(ngModel)]="current.character.stats.fpCurrent"
+            >
+          </td>
+          <td class="px-1">
+            of
+          </td>
+          <td>
+            <input
+              class="form-control text-center"
+              style="width: 6em"
+              readonly
+              value="{{ current.character.stats.totalFP }}"
+            >
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
   <ul class="nav nav-tabs">
     <li class="nav-item">
       <a class="nav-link" routerLink="/character/{{ current.character.id }}/lore" routerLinkActive="active">Lore</a>
@@ -8,7 +74,16 @@
       <a class="nav-link" routerLink="/character/{{ current.character.id }}/stats" routerLinkActive="active">Stats</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/character/{{ current.character.id }}/naturals">Naturals</a>
+      <a class="nav-link" routerLink="/character/{{ current.character.id }}/naturals" routerLinkActive="active">Naturals</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/character/{{ current.character.id }}/supers" routerLinkActive="active">Supers</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/character/{{ current.character.id }}/items" routerLinkActive="active">Items</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/character/{{ current.character.id }}/stat-abilities" routerLinkActive="active">Stat Abilities</a>
     </li>
   </ul>
 </div>

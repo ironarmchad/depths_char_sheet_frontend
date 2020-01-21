@@ -1,14 +1,16 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {CharacterService} from '../../_services/character.service';
 import {CurrentCharacterService} from '../_current-character.service';
+import {interval, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit, OnDestroy {
+  saveTimer: Subscription;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,11 +22,17 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     const params = this.route.snapshot.params;
     const {id} = params;
+    const source = interval(120000);
 
 
     this.charServ.getCharacter(id).subscribe(res => {
       this.current.character = res;
+      this.saveTimer = source.subscribe(val => this.charServ.patchCharacter(this.current.character).subscribe());
     });
+  }
+
+  ngOnDestroy(): void {
+    this.saveTimer.unsubscribe();
   }
 
 }

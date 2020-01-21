@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="card mb-3">
+    <div class="card-header">
+      <h3 class="card-title text-center">Editing Supernatural Abilities</h3>
+    </div>
+
+    <div class="card-body">
+      <div class="btn-toolbar justify-content-center">
+        <a
+          class="btn btn-primary m-1"
+          routerLink="/character/{{ current.character.id }}/supers"
+        >Exit</a>
+      </div>
+    </div>
+  </div>
+
+  <div *ngFor="let super of current.character.abilities.superAbilities; index as i" class="card mb-3">
+    <div class="card-header">
+      <input
+        class="form-control card-title h4 text-center"
+        type="text"
+        id="name{{i}}"
+        name="name{{i}}"
+        [(ngModel)]="super.name"
+        required
+      >
+    </div>
+
+    <div class="card-body">
+      <label for="description{{i}}">Description</label>
+      <textarea
+        class="form-control card-text mb-2"
+        id="description{{i}}"
+        name="description{{i}}"
+        [(ngModel)]="super.description"
+      ></textarea>
+
+      <div class="input-group mx-auto mb-2" style="max-width: 12em">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Fp Use: </span>
+        </div>
+        <input
+          class="form-control text-center"
+          type="number"
+          min="0"
+          id="fpUse{{i}}"
+          name="fpUse{{i}}"
+          [(ngModel)]="super.fpUse"
+        >
+      </div>
+
+      <div class="input-group mx-auto" style="max-width: 12em">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Uses Per Day: </span>
+        </div>
+
+        <input
+          class="form-control text-center"
+          type="number"
+          min="0"
+          id="usesPerDay{{i}}"
+          name="usesPerDay{{i}}"
+          [(ngModel)]="super.usesPerDay"
+        >
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="btn-toolbar justify-content-center">
+        <button
+          type="button"
+          class="btn btn-danger m-1"
+          (click)="deleteSuper(i)"
+        >Delete</button>
+
+        <div class="input-group m-1" style="max-width: 10em;">
+          <input
+            class="form-control text-center"
+            type="number"
+            min="1"
+            [max]="current.character.abilities.superAbilities.length"
+            id="reposition{{i}}"
+            name="reposition{{i}}"
+            [(ngModel)]="reposition"
+          >
+
+          <div class="input-group-append">
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              (click)="moveTo(i)"
+            >Move</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title text-center">New Super Ability</h4>
+    </div>
+
+    <div class="card-body">
+      <div class="btn-toolbar justify-content-center">
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="addSuper()"
+        >Add</button>
+      </div>
+    </div>
+  </div>
+</div>
