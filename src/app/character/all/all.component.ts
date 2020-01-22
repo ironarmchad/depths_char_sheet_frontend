@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CharacterService} from '../../_services/character.service';
 import {Character} from '../../_models/character';
 
@@ -9,14 +9,20 @@ import {Character} from '../../_models/character';
 })
 export class AllComponent implements OnInit {
   characters: Character[] = [];
+  viewables: Character[] = [];
 
   constructor(
     private charServ: CharacterService,
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
-    this.charServ.getCharacterAll().subscribe( res => {
+    this.charServ.getCharacterAll().subscribe(res => {
       this.characters = res;
+    });
+
+    this.charServ.getCharacterViewable().subscribe(res => {
+      this.viewables = res;
     });
   }
 

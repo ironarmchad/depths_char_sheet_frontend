@@ -15,10 +15,11 @@ import { ItemComponent } from './item/item.component';
 import { ItemEditComponent } from './item-edit/item-edit.component';
 import { StatAbilityComponent } from './stat-ability/stat-ability.component';
 import { StatAbilityEditComponent } from './stat-ability-edit/stat-ability-edit.component';
+import { ShareComponent } from './share/share.component';
 
 
 @NgModule({
-  declarations: [ProfileComponent, LoreComponent, StatsComponent, StatsPointBuyComponent, NaturalAbilitiesComponent, NaturalAbilitiesEditComponent, SuperAbilitiesComponent, SuperAbilitiesEditComponent, ItemComponent, ItemEditComponent, StatAbilityComponent, StatAbilityEditComponent],
+  declarations: [ProfileComponent, LoreComponent, StatsComponent, StatsPointBuyComponent, NaturalAbilitiesComponent, NaturalAbilitiesEditComponent, SuperAbilitiesComponent, SuperAbilitiesEditComponent, ItemComponent, ItemEditComponent, StatAbilityComponent, StatAbilityEditComponent, ShareComponent],
   imports: [
     CommonModule,
     ProfileRoutingModule,

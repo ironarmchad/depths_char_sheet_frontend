@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="card mb-3">
+    <div class="card-header">
+      <h3 class="text-center">Share Your Character</h3>
+    </div>
+
+    <div class="card-body">
+      <p class="card-text">
+        Update who can see your character here. Try to keep it a somewhat limited set.
+      </p>
+
+      <div class="d-flex flex-row flex-wrap">
+        <div class="card d-flex flex-row m-1" *ngFor="let viewer of sharedList; index as i">
+          <span class="m-1">{{ viewer.username }}</span>
+          <button class="btn btn-danger" (click)="removeShare(i)">X</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form>
+    <div class="d-flex flex-row mb-3">
+      <select class="form-control" (change)="addViewer($event.target.value)">
+        <option value="-1">---</option>
+        <option *ngFor="let user of current.userList" [value]="user.id">{{ user.username }}</option>
+      </select>
+    </div>
+  </form>
+</div>

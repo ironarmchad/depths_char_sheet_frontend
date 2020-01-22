@@ -28,6 +28,9 @@ export class ShareComponent implements OnInit {
     const {id} = params;
 
     this.authServ.getUserList().subscribe(res => {
+      res.forEach(user => {
+        if (user.id !==)
+      });
       this.userList = res;
     });
 

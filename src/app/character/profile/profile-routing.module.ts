@@ -12,6 +12,7 @@ import {ItemEditComponent} from './item-edit/item-edit.component';
 import {ItemComponent} from './item/item.component';
 import {StatAbilityEditComponent} from './stat-ability-edit/stat-ability-edit.component';
 import {StatAbilityComponent} from './stat-ability/stat-ability.component';
+import {ShareComponent} from './share/share.component';
 
 
 const routes: Routes = [
@@ -62,6 +63,10 @@ const routes: Routes = [
       {
         path: 'stat-abilities',
         component: StatAbilityComponent
+      },
+      {
+        path: 'share',
+        component: ShareComponent
       },
       {
         path: '',
