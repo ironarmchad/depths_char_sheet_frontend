@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShareComponent } from './share.component';
+import { AbilityCardComponent } from './ability-card.component';
 
-describe('ShareComponent', () => {
-  let component: ShareComponent;
-  let fixture: ComponentFixture<ShareComponent>;
+describe('AbilityCardComponent', () => {
+  let component: AbilityCardComponent;
+  let fixture: ComponentFixture<AbilityCardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShareComponent ]
+      declarations: [ AbilityCardComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShareComponent);
+    fixture = TestBed.createComponent(AbilityCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

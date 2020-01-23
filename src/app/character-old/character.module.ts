@@ -22,11 +22,10 @@ import {DisplaySuperAbilityComponent} from './profile/display-super-ability/disp
 import {DisplayItemComponent} from './profile/display-item/display-item.component';
 import {ViewComponent} from './view/view.component';
 import {AbilityCardComponent} from './view/ability-card/ability-card.component';
-import {ShareComponent} from './share/share.component';
 
 
 @NgModule({
-  declarations: [CharacterComponent, ProfileComponent, EditComponent, InfoComponent, StatsComponent, AbilitiesComponent, StatAbilitiesComponent, NaturalAbilityComponent, SuperAbilityComponent, ItemsComponent, CharacterCardComponent, StatLineComponent, DisplayStatAbilityComponent, DisplayNaturalAbilityComponent, DisplaySuperAbilityComponent, DisplayItemComponent, ViewComponent, AbilityCardComponent, ShareComponent],
+  declarations: [CharacterComponent, ProfileComponent, EditComponent, InfoComponent, StatsComponent, AbilitiesComponent, StatAbilitiesComponent, NaturalAbilityComponent, SuperAbilityComponent, ItemsComponent, CharacterCardComponent, StatLineComponent, DisplayStatAbilityComponent, DisplayNaturalAbilityComponent, DisplaySuperAbilityComponent, DisplayItemComponent, ViewComponent, AbilityCardComponent],
   imports: [
     CommonModule,
     CharacterRoutingModule,

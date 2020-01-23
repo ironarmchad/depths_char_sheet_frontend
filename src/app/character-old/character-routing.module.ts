@@ -5,7 +5,6 @@ import {AuthGuard} from '../_guards/auth.guard';
 import {ProfileComponent} from './profile/profile.component';
 import {EditComponent} from './edit/edit.component';
 import {ViewComponent} from './view/view.component';
-import {ShareComponent} from './share/share.component';
 
 
 const routes: Routes = [
@@ -13,11 +12,6 @@ const routes: Routes = [
     path: ':id',
     component: ProfileComponent
 
-  },
-  {
-    path: ':id/share',
-    component: ShareComponent,
-    canActivate: [AuthGuard]
   },
   {
     path: ':id/edit',
