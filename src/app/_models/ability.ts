@@ -4,6 +4,7 @@ export class Ability implements Deserializable {
   name?: string;
   description?: string;
   slots?: number;
+  fpUse?: number;
 
   deserialize(input: any): this {
     Object.assign(this, input);

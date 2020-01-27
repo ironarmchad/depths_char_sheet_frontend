@@ -1,11 +1,28 @@
-@media screen {
-  html, body {
-    text-size: 100%;
-  }
+html, body {font-size: 100%}
+
+@media print {
+  html, body {font-size: 14px}
 }
 
-@media print{
-  html{
-    text-size: 12pt;
-  }
+$mod_sm: 1.25;
+h1 {font-size: pow($mod_sm, 5) * 1em}
+h2 {font-size: pow($mod_sm, 4) * 1em}
+h3 {font-size: pow($mod_sm, 3) * 1em}
+h4 {font-size: pow($mod_sm, 2) * 1em}
+h5 {font-size: pow($mod_sm, 1) * 1em}
+h6 {font-size: 1em}
+
+
+@include media-breakpoint-up(md) {
+  body {font-size: 1.2rem}
 }
+
+@include media-breakpoint-up(lg) {
+  body {font-size: 1.4rem}
+}
+
+@include media-breakpoint-up(xl) {
+  body {font-size: 1.6rem}
+}
+
+

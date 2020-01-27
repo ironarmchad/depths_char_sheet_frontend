@@ -1,0 +1,7 @@
+.para-box {
+  max-width: 66em;
+  min-width: 18em;
+  @media (min-width: 30em) {
+    text-align: justify;
+  }
+}

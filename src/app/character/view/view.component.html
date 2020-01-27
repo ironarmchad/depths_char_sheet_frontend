@@ -1,76 +1,56 @@
 <div class="container">
-  <h2 class="text-center mb-3">{{ character.name }}</h2>
+  <h1 class="text-center">{{ character.name }}</h1>
 
-  <div class="d-flex flex-row">
-    <div class="mr-3 d-flex flex-column justify-content-around">
-      <table class="mx-auto mb-3">
-        <tbody>
-        <tr>
-          <th scope="row">HP</th>
-          <td>____ /  {{ character.stats.totalHp }}</td>
-        </tr>
-
-        <tr>
-          <th scope="row">FP</th>
-          <td>____ /  {{ character.stats.totalFP }}</td>
-        </tr>
-        </tbody>
-      </table>
-
-      <div>
-        <h3 class="text-center">Summary</h3>
-        <p class="text-center">
-          {{ character.lore.summary }}
-        </p>
-      </div>
+  <div class="my-5 d-flex flex-row align-items-center justify-content-between">
+    <div class="d-flex flex-column align-items-center mr-3">
+      <img class="m-3" src="https://via.placeholder.com/600x350.png">
+      <p class="para-box">{{ character.lore.summary }}</p>
     </div>
 
-    <!-- Stat Block -->
-    <table>
-      <tbody>
+    <table class="stat-box bdr-box align-items-center">
       <tr *ngFor="let stat of character.stats.statList">
-        <th scope="row">{{ stat }}</th>
+        <th>{{ stat }}:</th>
         <td>{{ character.stats[stat.toLowerCase()] }}</td>
-        <td>____</td>
       </tr>
-      </tbody>
+    </table>
+  </div>
+
+  <div class="my-5 d-flex flex-row justify-content-around align-items-center">
+    <table class="hp-tracker bdr-box">
+      <tr>
+        <th>HP</th>
+        <td>____</td>
+        <td>/</td>
+        <td>{{ character.stats.totalHp }}</td>
+      </tr>
+      <tr>
+        <th>FP</th>
+        <td>____</td>
+        <td>/</td>
+        <td>{{ character.stats.totalFP }}</td>
+      </tr>
     </table>
 
-    <!-- Description -->
-    <div class="mb-3">
-      <h3 class="text-center">Description</h3>
-      <p class="text-justify">
-        {{ character.lore.description }}
+    <div class="bdr-box p-2 text-center">
+      <h4 class="mb-5">XP Tracker</h4>
+      <p>
+        XP used <strong>{{ character.stats.xpCurrent }} / {{ character.stats.xpTotal }}</strong> <br>
+        XP gained (not uploaded): _______
       </p>
     </div>
+  </div>
 
-    <!-- Abilities -->
-    <!-- Stat Abilities -->
-    <div class="mb-3">
-      <h3 class="text-center">Stat Abilities</h3>
-      <app-ability-card *ngFor="let ability of character.abilities.statAbilities"
-                        [ability]="ability"></app-ability-card>
-    </div>
 
-    <!-- Items -->
-    <div class="mb-3">
-      <h3 class="text-center">Items</h3>
-      <app-ability-card *ngFor="let ability of character.abilities.items"
-                        [ability]="ability"></app-ability-card>
-    </div>
+  <p class="my-5 para-box">{{ character.lore.description }}</p>
 
-    <!-- Natural Abilities -->
-    <div class="mb-3">
-      <h3 class="text-center">Natural Abilities</h3>
-      <app-ability-card *ngFor="let ability of character.abilities.naturalAbilities"
-                        [ability]="ability"></app-ability-card>
-    </div>
-
-    <!-- Supernatural Abilities -->
-    <div class="mb-3">
-      <h3 class="text-center">Supernatural Abilities</h3>
-      <app-ability-card *ngFor="let ability of character.abilities.superAbilities"
-                        [ability]="ability"></app-ability-card>
+  <div class="w-100">
+    <h3 class="text-center">Stat Abilities</h3>
+    <div class="card-columns">
+      <div *ngFor="let ability of character.abilities.statAbilities" class="card">
+        <h4 class="text-center card-title">{{ ability.name }}</h4>
+        <p class="card-text">{{ ability.description }}</p>
+        <p *ngIf="ability.slots != 0" class="card-title">Slots: <strong>{{ ability.slots }}</strong></p>
+      </div>
     </div>
   </div>
 </div>
