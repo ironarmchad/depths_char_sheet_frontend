@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {CurrentCharacterService} from '../../_current-character.service';
+import {CurrentCharacterService} from '../_current-character.service';
 import {CharacterService} from '../../../_services/character.service';
-import {NaturalAbility} from '../../../_models/ability';
+import {Ability} from '../../../_models/ability';
 
 @Component({
   selector: 'app-natural-abilities-edit',
@@ -13,7 +13,6 @@ export class NaturalAbilitiesEditComponent implements OnInit, OnDestroy {
 
   constructor(
     private current: CurrentCharacterService,
-    private charServ: CharacterService,
   ) {
     this.reposition = 1;
   }
@@ -22,15 +21,17 @@ export class NaturalAbilitiesEditComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.save();
+    this.current.character.abilities.naturalAbilities.forEach(ability => {
+      if (ability.slots < 1) {
+        ability.slots = 1;
+      }
+    });
+    this.current.patchCharacter();
   }
 
-  save() {
-    this.charServ.patchCharacter(this.current.character).subscribe();
-  }
 
   addNatural(): void {
-    this.current.character.abilities.naturalAbilities.push(new NaturalAbility());
+    this.current.character.abilities.naturalAbilities.push(new Ability());
   }
 
   deleteNatural(index: number): void {

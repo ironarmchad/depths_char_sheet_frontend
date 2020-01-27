@@ -15,6 +15,7 @@ import {UserComponent} from './user/user.component';
 import {OutOfDomainComponent} from './out-of-domain/out-of-domain.component';
 import {TypographyComponent} from './typography/typography.component';
 import { GuidesModule } from './guides/guides.module';
+import {CharacterService} from './_services/character.service';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { GuidesModule } from './guides/guides.module';
     // GuidesModule
   ],
   providers: [
+    CharacterService,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
   ],

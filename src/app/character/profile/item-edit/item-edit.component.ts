@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {CurrentCharacterService} from '../../_current-character.service';
+import {CurrentCharacterService} from '../_current-character.service';
 import {CharacterService} from '../../../_services/character.service';
-import {Item} from '../../../_models/ability';
+import {Ability} from '../../../_models/ability';
 
 @Component({
   selector: 'app-item-edit',
@@ -13,7 +13,6 @@ export class ItemEditComponent implements OnInit, OnDestroy {
 
   constructor(
     private current: CurrentCharacterService,
-    private charServ: CharacterService,
   ) {
     this.reposition = 1;
   }
@@ -22,7 +21,12 @@ export class ItemEditComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.charServ.patchCharacter(this.current.character).subscribe();
+    this.current.character.abilities.items.forEach(item => {
+      if (item.slots < 1) {
+        item.slots = 1;
+      }
+    });
+    this.current.patchCharacter();
   }
 
   deleteItem(index: number): void {
@@ -34,7 +38,7 @@ export class ItemEditComponent implements OnInit, OnDestroy {
   }
 
   addItem(): void {
-    this.current.character.abilities.items.push(new Item());
+    this.current.character.abilities.items.push(new Ability());
   }
 
 }

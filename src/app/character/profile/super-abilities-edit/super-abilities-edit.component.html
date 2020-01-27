@@ -37,6 +37,20 @@
 
       <div class="input-group mx-auto mb-2" style="max-width: 12em">
         <div class="input-group-prepend">
+          <span class="input-group-text">Slots: </span>
+        </div>
+        <input
+          class="form-control text-center"
+          type="number"
+          min="1"
+          id="slots{{i}}"
+          name="slots{{i}}"
+          [(ngModel)]="super.slots"
+        >
+      </div>
+
+      <div class="input-group mx-auto mb-2" style="max-width: 12em">
+        <div class="input-group-prepend">
           <span class="input-group-text">Fp Use: </span>
         </div>
         <input

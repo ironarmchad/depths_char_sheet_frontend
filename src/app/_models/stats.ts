@@ -82,6 +82,22 @@ export class Stats implements Deserializable {
     ];
   }
 
+  get highestPhys(): string {
+    let highestStat = '';
+    let highestValue = 0;
+    this.physList.forEach(stat => {
+      if (this[stat.toLowerCase()] > highestValue) {
+        highestStat = stat;
+        highestValue = this[stat.toLowerCase()];
+      }
+    });
+    return highestStat;
+  }
+
+  get naturalSlots(): number {
+    return this[this.highestPhys.toLowerCase()];
+  }
+
   get mentList(): string[] {
     return [
       'Willpower',
@@ -91,6 +107,26 @@ export class Stats implements Deserializable {
       'Luck',
       'Charisma'
     ];
+  }
+
+  get highestMent(): string {
+    let highestStat = '';
+    let highestValue = 0;
+    this.mentList.forEach(stat => {
+      if (this[stat.toLowerCase()] > highestValue) {
+        highestStat = stat;
+        highestValue = this[stat.toLowerCase()];
+      }
+    });
+    return highestStat;
+  }
+
+  get superSlots(): number {
+    return this[this.highestMent.toLowerCase()];
+  }
+
+  get totalSlots(): number {
+    return 18 + this.totalMajorStatUps();
   }
 
   get pointTotal(): number {

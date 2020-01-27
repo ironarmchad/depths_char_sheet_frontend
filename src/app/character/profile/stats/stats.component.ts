@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {CurrentCharacterService} from '../../_current-character.service';
+import {CurrentCharacterService} from '../_current-character.service';
 import {CharacterService} from '../../../_services/character.service';
 
 @Component({
@@ -18,12 +18,13 @@ export class StatsComponent implements OnInit, OnDestroy {
   ngOnInit() {
   }
 
-  ngOnDestroy(): void {
-    this.saveChar();
+  // This method is in place in case I need to do some processing before a save
+  saveChar(): void {
+    this.current.patchCharacter();
   }
 
-  saveChar(): void {
-    this.charServ.patchCharacter(this.current.character).subscribe();
+  ngOnDestroy(): void {
+    this.saveChar();
   }
 
   levelUp(stat: string): void {

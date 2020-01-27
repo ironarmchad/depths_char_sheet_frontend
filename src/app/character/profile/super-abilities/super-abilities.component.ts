@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {CurrentCharacterService} from '../../_current-character.service';
+import {CurrentCharacterService} from '../_current-character.service';
 import {CharacterService} from '../../../_services/character.service';
 
 @Component({
@@ -11,15 +11,19 @@ export class SuperAbilitiesComponent implements OnInit, OnDestroy {
 
   constructor(
     private current: CurrentCharacterService,
-    private charServ: CharacterService,
   ) {
   }
 
   ngOnInit() {
+    this.current.character.abilities.superAbilities.forEach(ability => {
+      if (ability.slots < 1) {
+        ability.slots = 1;
+      }
+    });
+    this.current.patchCharacter();
   }
 
   ngOnDestroy(): void {
-    this.charServ.patchCharacter(this.current.character).subscribe();
   }
 
   useFp(fpUse: number): void {

@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {CurrentCharacterService} from '../../_current-character.service';
+import {CurrentCharacterService} from '../_current-character.service';
 import {CharacterService} from '../../../_services/character.service';
-import {StatAbility} from '../../../_models/ability';
+import {Ability} from '../../../_models/ability';
 
 @Component({
   selector: 'app-stat-ability-edit',
@@ -13,7 +13,6 @@ export class StatAbilityEditComponent implements OnInit, OnDestroy {
 
   constructor(
     private current: CurrentCharacterService,
-    private charServ: CharacterService,
   ) {
     this.reposition = 1;
   }
@@ -22,7 +21,7 @@ export class StatAbilityEditComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.charServ.patchCharacter(this.current.character).subscribe();
+    this.current.patchCharacter();
   }
 
   deleteStatAbility(index: number): void {
@@ -34,7 +33,7 @@ export class StatAbilityEditComponent implements OnInit, OnDestroy {
   }
 
   addStatAbility(): void {
-    this.current.character.abilities.statAbilities.push(new StatAbility());
+    this.current.character.abilities.statAbilities.push(new Ability());
   }
 
 }

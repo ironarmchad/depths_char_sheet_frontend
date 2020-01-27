@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {CurrentCharacterService} from '../../_current-character.service';
+import {CurrentCharacterService} from '../_current-character.service';
 import {CharacterService} from '../../../_services/character.service';
 
 @Component({
@@ -10,7 +10,6 @@ import {CharacterService} from '../../../_services/character.service';
 export class LoreComponent implements OnInit, OnDestroy {
 
   constructor(
-    private charServ: CharacterService,
     private current: CurrentCharacterService
   ) { }
 
@@ -18,7 +17,7 @@ export class LoreComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.charServ.patchCharacter(this.current.character).subscribe();
+    this.current.patchCharacter();
   }
 
 }

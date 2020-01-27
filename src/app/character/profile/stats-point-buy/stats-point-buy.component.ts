@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {CharacterService} from '../../../_services/character.service';
-import {CurrentCharacterService} from '../../_current-character.service';
+import {CurrentCharacterService} from '../_current-character.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -11,7 +11,6 @@ import {Router} from '@angular/router';
 export class StatsPointBuyComponent implements OnInit, OnDestroy {
 
   constructor(
-    private charServ: CharacterService,
     private current: CurrentCharacterService,
     private router: Router,
   ) {
@@ -32,7 +31,7 @@ export class StatsPointBuyComponent implements OnInit, OnDestroy {
       this.current.character.stats.method = 'Point Buy';
     }
 
-    this.charServ.patchCharacter(this.current.character).subscribe();
+    this.current.patchCharacter();
   }
 
 }

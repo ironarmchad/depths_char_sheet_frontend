@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {CurrentCharacterService} from '../../_current-character.service';
+import {CurrentCharacterService} from '../_current-character.service';
 import {CharacterService} from '../../../_services/character.service';
 
 @Component({
@@ -11,7 +11,6 @@ export class NaturalAbilitiesComponent implements OnInit, OnDestroy {
 
   constructor(
     private current: CurrentCharacterService,
-    private charServ: CharacterService,
   ) {
   }
 
@@ -19,11 +18,7 @@ export class NaturalAbilitiesComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.save();
-  }
-
-  save() {
-    this.charServ.patchCharacter(this.current.character).subscribe();
+    this.current.patchCharacter();
   }
 
 }

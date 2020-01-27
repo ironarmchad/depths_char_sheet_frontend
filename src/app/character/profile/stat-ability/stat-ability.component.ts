@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {CurrentCharacterService} from '../../_current-character.service';
+import {CurrentCharacterService} from '../_current-character.service';
 import {CharacterService} from '../../../_services/character.service';
 
 @Component({
@@ -11,14 +11,13 @@ export class StatAbilityComponent implements OnInit, OnDestroy {
 
   constructor(
     private current: CurrentCharacterService,
-    private charServ: CharacterService,
   ) { }
 
   ngOnInit() {
   }
 
   ngOnDestroy(): void {
-    this.charServ.patchCharacter(this.current.character).subscribe();
+    this.current.patchCharacter();
   }
 
 

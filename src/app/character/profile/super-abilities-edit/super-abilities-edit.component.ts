@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {CurrentCharacterService} from '../../_current-character.service';
+import {CurrentCharacterService} from '../_current-character.service';
 import {CharacterService} from '../../../_services/character.service';
-import {SuperAbility} from '../../../_models/ability';
+import {Ability} from '../../../_models/ability';
 
 @Component({
   selector: 'app-super-abilities-edit',
@@ -13,7 +13,6 @@ export class SuperAbilitiesEditComponent implements OnInit, OnDestroy {
 
   constructor(
     private current: CurrentCharacterService,
-    private charServ: CharacterService,
   ) {
     this.reposition = 1;
   }
@@ -22,11 +21,16 @@ export class SuperAbilitiesEditComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.charServ.patchCharacter(this.current.character).subscribe();
+    this.current.character.abilities.superAbilities.forEach(ability => {
+      if (ability.slots < 1) {
+        ability.slots = 1;
+      }
+    });
+    this.current.patchCharacter();
   }
 
   addSuper(): void {
-    this.current.character.abilities.superAbilities.push(new SuperAbility());
+    this.current.character.abilities.superAbilities.push(new Ability());
   }
 
   deleteSuper(index: number): void {

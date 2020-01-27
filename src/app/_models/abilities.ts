@@ -1,11 +1,11 @@
 import {Deserializable} from '../_interfaces/deserializable';
-import {Item, NaturalAbility, StatAbility, SuperAbility} from './ability';
+import {Ability} from './ability';
 
 export class Abilities implements Deserializable {
-  statAbilities?: StatAbility[] = [];
-  naturalAbilities?: NaturalAbility[] = [];
-  superAbilities?: SuperAbility[] = [];
-  items?: Item[] = [];
+  statAbilities?: Ability[] = [];
+  naturalAbilities?: Ability[] = [];
+  superAbilities?: Ability[] = [];
+  items?: Ability[] = [];
 
   deserialize(input: any): this {
     if (!input) {
@@ -13,16 +13,16 @@ export class Abilities implements Deserializable {
     }
 
     if (input.statAbilities) {
-      this.statAbilities = input.statAbilities.map(res => new StatAbility().deserialize(res));
+      this.statAbilities = input.statAbilities.map(res => new Ability().deserialize(res));
     }
     if (input.naturalAbilities) {
-      this.naturalAbilities = input.naturalAbilities.map(res => new NaturalAbility().deserialize(res));
+      this.naturalAbilities = input.naturalAbilities.map(res => new Ability().deserialize(res));
     }
     if (input.superAbilities) {
-      this.superAbilities = input.superAbilities.map(res => new SuperAbility().deserialize(res));
+      this.superAbilities = input.superAbilities.map(res => new Ability().deserialize(res));
     }
     if (input.items) {
-      this.items = input.items.map(res => new Item().deserialize(res));
+      this.items = input.items.map(res => new Ability().deserialize(res));
     }
 
     return this;

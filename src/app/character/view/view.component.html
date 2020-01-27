@@ -1,5 +1,8 @@
 <div class="container">
-  <h1 class="text-center">{{ character.name }}</h1>
+  <p class="display-1 text-center font-weight-normal">{{ character.name }}</p>
+  <div class="alert alert-warning d-print-none text-center">
+    <p>This page is meant for printing thus not mobile friendly... Sorry...</p>
+  </div>
 
   <div class="my-5 d-flex flex-row align-items-center justify-content-between">
     <div class="d-flex flex-column align-items-center mr-3">
@@ -43,14 +46,122 @@
 
   <p class="my-5 para-box">{{ character.lore.description }}</p>
 
-  <div class="w-100">
+  <div class="my-5 w-100">
     <h3 class="text-center">Stat Abilities</h3>
     <div class="card-columns">
-      <div *ngFor="let ability of character.abilities.statAbilities" class="card">
-        <h4 class="text-center card-title">{{ ability.name }}</h4>
-        <p class="card-text">{{ ability.description }}</p>
-        <p *ngIf="ability.slots != 0" class="card-title">Slots: <strong>{{ ability.slots }}</strong></p>
+      <app-ability-card *ngFor="let ability of character.abilities.statAbilities" [ability]="ability"></app-ability-card>
+    </div>
+  </div>
+
+  <div class="my-5 w-100">
+    <h3 class="text-center">Natural Abilities</h3>
+    <div class="card-columns">
+      <app-ability-card *ngFor="let ability of character.abilities.naturalAbilities" [ability]="ability"></app-ability-card>
+    </div>
+  </div>
+
+  <div class="my-5 w-100">
+    <h3 class="text-center">Supernatural Abilities</h3>
+    <div class="card-columns">
+      <app-ability-card *ngFor="let ability of character.abilities.superAbilities" [ability]="ability"></app-ability-card>
+    </div>
+  </div>
+
+  <div class="my-5 w-100">
+    <h3 class="text-center">Items</h3>
+    <div class="card-columns">
+      <app-ability-card *ngFor="let ability of character.abilities.items" [ability]="ability"></app-ability-card>
+    </div>
+  </div>
+
+
+  <div class="my-5 w-100" style="page-break-before: always">
+    <div class="mb-3">
+      <h1 class="text-center">{{ character.name }}</h1>
+      <h3 class="text-center">Story Teller Check Up</h3>
+    </div>
+    <div class="card-columns">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="text-center">Stats</h4>
+          <table class="mx-auto stat-box">
+            <tr>
+              <th>XP Use:</th>
+              <td>{{ character.stats.xpCurrent }}</td>
+              <td>/</td>
+              <td>{{ character.stats.xpTotal }}</td>
+            </tr>
+          </table>
+          <table class="mx-auto stat-box">
+            <tr>
+              <th>Highest Physical:</th>
+              <td>{{ character.stats.highestPhys }}</td>
+              <td>({{ character.stats[character.stats.highestPhys.toLowerCase()] }})</td>
+            </tr>
+
+            <tr>
+              <th>Highest Mental:</th>
+              <td>{{ character.stats.highestMent }}</td>
+              <td>({{ character.stats[character.stats.highestMent.toLowerCase()] }})</td>
+            </tr>
+          </table>
+
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h4 class="text-center">Slot Usage</h4>
+          <table class="mx-auto stat-box">
+            <tr>
+              <th class="text-right">
+                Slots Total:
+              </th>
+              <td>
+                {{ character.abilities.totalSlots }}
+              </td>
+              <td>/</td>
+              <td>{{ character.stats.totalSlots }}</td>
+            </tr>
+
+            <tr>
+              <th class="text-right">
+                Natural Slots Used:
+              </th>
+              <td>
+                {{ character.abilities.naturalSlots }}
+              </td>
+              <td>/</td>
+              <td>{{ character.stats.naturalSlots }}</td>
+            </tr>
+
+            <tr>
+              <th class="text-right">
+                Supernatural Slots Used:
+              </th>
+              <td>
+                {{ character.abilities.superSlots }}
+              </td>
+              <td>/</td>
+              <td>{{ character.stats.superSlots }}</td>
+            </tr>
+
+            <tr>
+              <th class="text-right">
+                Item Slots Used:
+              </th>
+              <td>
+                {{ character.abilities.itemSlots }}
+              </td>
+              <td></td>
+              <td></td>
+            </tr>
+
+          </table>
+
+        </div>
       </div>
     </div>
   </div>
+
 </div>
