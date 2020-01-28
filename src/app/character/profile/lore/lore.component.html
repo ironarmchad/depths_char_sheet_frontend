@@ -8,7 +8,7 @@
         id="name"
         name="name"
         #name="ngModel"
-        [(ngModel)]="current.character.name"
+        [(ngModel)]="character.name"
         required>
       <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Name is required.</div>
     </div>
@@ -19,7 +19,7 @@
         class="form-control"
         id="summary"
         name="summary"
-        [(ngModel)]="current.character.lore.summary"
+        [(ngModel)]="character.lore.summary"
       ></textarea>
     </div>
 
@@ -30,7 +30,7 @@
         id="description"
         name="description"
         rows="10"
-        [(ngModel)]="current.character.lore.description"
+        [(ngModel)]="character.lore.description"
       ></textarea>
     </div>
   </form>

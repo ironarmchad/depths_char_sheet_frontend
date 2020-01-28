@@ -8,7 +8,7 @@
       <div class="btn-toolbar justify-content-center">
         <a
           class="btn btn-primary"
-          routerLink="/character/{{ current.character.id }}/stat-abilities/edit"
+          routerLink="/character/{{ character.id }}/stat-abilities/edit"
         >Edit</a>
       </div>
     </div>
@@ -16,7 +16,7 @@
 
   <div
     class="card mb-3"
-    *ngFor="let statAbility of current.character.abilities.statAbilities; index as i"
+    *ngFor="let statAbility of character.abilities.statAbilities; index as i"
   >
     <div class="card-header">
       <h4 class="card-title text-center">{{ statAbility.name }}</h4>
