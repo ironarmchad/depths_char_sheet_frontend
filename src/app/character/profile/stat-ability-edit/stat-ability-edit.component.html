@@ -8,13 +8,13 @@
       <div class="btn-toolbar justify-content-center">
         <a
           class="btn btn-primary m-1"
-          routerLink="/character/{{ current.character.id }}/stat-abilities"
+          routerLink="/character/{{ character.id }}/stat-abilities"
         >Exit</a>
       </div>
     </div>
   </div>
 
-  <div *ngFor="let statAbility of current.character.abilities.statAbilities; index as i" class="card mb-3">
+  <div *ngFor="let statAbility of character.abilities.statAbilities; index as i" class="card mb-3">
     <div class="card-header">
       <input
         class="form-control card-title h4 text-center"
@@ -64,7 +64,7 @@
             class="form-control text-center"
             type="number"
             min="1"
-            [max]="current.character.abilities.statAbilities.length"
+            [max]="character.abilities.statAbilities.length"
             id="reposition{{i}}"
             name="reposition{{i}}"
             [(ngModel)]="reposition"

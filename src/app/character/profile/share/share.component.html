@@ -22,7 +22,7 @@
     <div class="d-flex flex-row mb-3">
       <select class="form-control" (change)="addViewer($event.target.value)">
         <option value="-1">---</option>
-        <option *ngFor="let user of current.userList" [value]="user.id">{{ user.username }}</option>
+        <option *ngFor="let user of userList" [value]="user.id">{{ user.username }}</option>
       </select>
     </div>
   </form>

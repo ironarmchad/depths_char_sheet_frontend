@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {CurrentCharacterService} from '../_current-character.service';
-import {CharacterService} from '../../../_services/character.service';
+import {Character} from '../../../_models/character';
 
 @Component({
   selector: 'app-stat-ability',
@@ -8,10 +8,13 @@ import {CharacterService} from '../../../_services/character.service';
   styleUrls: ['./stat-ability.component.scss']
 })
 export class StatAbilityComponent implements OnInit, OnDestroy {
+  character: Character;
 
   constructor(
     private current: CurrentCharacterService,
-  ) { }
+  ) {
+    this.character = current.character;
+  }
 
   ngOnInit() {
   }
@@ -19,7 +22,6 @@ export class StatAbilityComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.current.patchCharacter();
   }
-
 
 
 }

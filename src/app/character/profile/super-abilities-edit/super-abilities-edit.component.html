@@ -8,13 +8,13 @@
       <div class="btn-toolbar justify-content-center">
         <a
           class="btn btn-primary m-1"
-          routerLink="/character/{{ current.character.id }}/supers"
+          routerLink="/character/{{ character.id }}/supers"
         >Exit</a>
       </div>
     </div>
   </div>
 
-  <div *ngFor="let super of current.character.abilities.superAbilities; index as i" class="card mb-3">
+  <div *ngFor="let super of character.abilities.superAbilities; index as i" class="card mb-3">
     <div class="card-header">
       <input
         class="form-control card-title h4 text-center"
@@ -92,7 +92,7 @@
             class="form-control text-center"
             type="number"
             min="1"
-            [max]="current.character.abilities.superAbilities.length"
+            [max]="character.abilities.superAbilities.length"
             id="reposition{{i}}"
             name="reposition{{i}}"
             [(ngModel)]="reposition"

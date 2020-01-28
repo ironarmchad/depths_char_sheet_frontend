@@ -4,6 +4,7 @@ import {CharacterService} from '../../_services/character.service';
 import {CurrentCharacterService} from './_current-character.service';
 import {interval, Subscription} from 'rxjs';
 import {AuthenticationService} from '../../_services/authentication.service';
+import {Character} from '../../_models/character';
 
 @Component({
   selector: 'app-profile',
@@ -11,6 +12,7 @@ import {AuthenticationService} from '../../_services/authentication.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit, OnDestroy {
+  character: Character;
   saveTimer: Subscription;
 
   constructor(
@@ -19,6 +21,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     private charServ: CharacterService,
     private current: CurrentCharacterService
   ) {
+    this.character = this.current.character;
   }
 
   ngOnInit() {

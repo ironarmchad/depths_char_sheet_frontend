@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {CurrentCharacterService} from '../_current-character.service';
-import {CharacterService} from '../../../_services/character.service';
+import {Character} from '../../../_models/character';
 
 @Component({
   selector: 'app-stats',
@@ -8,11 +8,12 @@ import {CharacterService} from '../../../_services/character.service';
   styleUrls: ['./stats.component.scss']
 })
 export class StatsComponent implements OnInit, OnDestroy {
+  character: Character;
 
   constructor(
-    private charServ: CharacterService,
     private current: CurrentCharacterService,
   ) {
+    this.character = this.current.character;
   }
 
   ngOnInit() {

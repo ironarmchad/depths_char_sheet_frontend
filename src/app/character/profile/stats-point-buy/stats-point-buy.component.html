@@ -7,7 +7,7 @@
       </div>
       <div class="card-body text-center">
         <p>Consult with your Story Teller for how many points you are allowed. The standard is 110 points.</p>
-        <h5>Points Used: {{ current.character.stats.pointTotal }}</h5>
+        <h5>Points Used: {{ character.stats.pointTotal }}</h5>
         <div class="btn-toolbar justify-content-center">
           <button class="btn btn-primary m-1" (click)="save('Point Buy')">Save as Point Buy</button>
           <button class="btn btn-primary m-1" (click)="save('User Randomized')">Save as User Randomized</button>
@@ -20,7 +20,7 @@
         <h4 class="card-header text-center">Physical Stats</h4>
         <div class="card-body">
           <table class="statTable text-right mx-auto">
-            <tr *ngFor="let stat of current.character.stats.physList">
+            <tr *ngFor="let stat of character.stats.physList">
               <th>{{ stat }}:</th>
               <td>
                 <input
@@ -29,7 +29,7 @@
                   type="number"
                   id="{{ stat }}"
                   name="{{ stat }}"
-                  [(ngModel)]="current.character.stats[stat.toLowerCase()]"
+                  [(ngModel)]="character.stats[stat.toLowerCase()]"
                 >
               </td>
             </tr>
@@ -40,7 +40,7 @@
         <h4 class="card-header text-center">Mental Stats</h4>
         <div class="card-body">
           <table class="statTable text-right mx-auto">
-            <tr *ngFor="let stat of current.character.stats.mentList">
+            <tr *ngFor="let stat of character.stats.mentList">
               <th>{{ stat }}:</th>
               <td>
                 <input
@@ -49,7 +49,7 @@
                   type="number"
                   id="{{ stat }}"
                   name="{{ stat }}"
-                  [(ngModel)]="current.character.stats[stat.toLowerCase()]"
+                  [(ngModel)]="character.stats[stat.toLowerCase()]"
                 >
               </td>
             </tr>

@@ -5,14 +5,14 @@
     </div>
     <div class="card-body">
       <p class="card-text">
-        You have <strong>{{ current.character.abilities.naturalSlots }}</strong> slots worth of natural abilities.
+        You have <strong>{{ character.abilities.naturalSlots }}</strong> slots worth of natural abilities.
       </p>
       <div class="btn-toolbar justify-content-center">
-        <a class="btn btn-primary" routerLink="/character/{{ current.character.id }}/naturals/edit">Edit</a>
+        <a class="btn btn-primary" routerLink="/character/{{ character.id }}/naturals/edit">Edit</a>
       </div>
     </div>
   </div>
-  <div *ngFor="let ability of current.character.abilities.naturalAbilities" class="card mb-3">
+  <div *ngFor="let ability of character.abilities.naturalAbilities" class="card mb-3">
     <div class="card-header text-center">
       <h4 class="text-center card-title">{{ ability.name }}</h4>
     </div>

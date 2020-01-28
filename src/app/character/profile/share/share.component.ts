@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {CurrentCharacterService} from '../_current-character.service';
 import {CharacterService} from '../../../_services/character.service';
+import {Character} from '../../../_models/character';
 
 @Component({
   selector: 'app-share',
@@ -9,10 +10,12 @@ import {CharacterService} from '../../../_services/character.service';
 })
 export class ShareComponent implements OnInit, OnDestroy {
   sharedList: any[] = [];
+  userList: any[];
 
   constructor(
     private current: CurrentCharacterService,
   ) {
+    this.userList = current.userList;
   }
 
   ngOnInit() {

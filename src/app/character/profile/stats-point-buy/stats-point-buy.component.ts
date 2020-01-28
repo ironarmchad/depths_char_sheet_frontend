@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {CharacterService} from '../../../_services/character.service';
 import {CurrentCharacterService} from '../_current-character.service';
 import {Router} from '@angular/router';
+import {Character} from '../../../_models/character';
 
 @Component({
   selector: 'app-stats-point-buy',
@@ -9,11 +9,13 @@ import {Router} from '@angular/router';
   styleUrls: ['./stats-point-buy.component.scss']
 })
 export class StatsPointBuyComponent implements OnInit, OnDestroy {
+  character: Character;
 
   constructor(
     private current: CurrentCharacterService,
     private router: Router,
   ) {
+    this.character = this.current.character;
   }
 
   ngOnInit() {

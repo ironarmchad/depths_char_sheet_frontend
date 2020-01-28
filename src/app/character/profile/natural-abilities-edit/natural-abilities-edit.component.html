@@ -6,14 +6,14 @@
     <div class="card-body">
       <div class="btn-toolbar justify-content-center">
         <a
-          routerLink="/character/{{ current.character.id }}/naturals"
+          routerLink="/character/{{ character.id }}/naturals"
           class="btn btn-primary m-1"
         >Save</a>
       </div>
     </div>
   </div>
 
-  <div *ngFor="let natural of current.character.abilities.naturalAbilities; index as i" class="card mb-3">
+  <div *ngFor="let natural of character.abilities.naturalAbilities; index as i" class="card mb-3">
     <div class="card-header">
       <input
         class="form-control card-title h4 text-center"
@@ -59,7 +59,7 @@
           class="form-control text-center"
           type="number"
           min="1"
-          [max]="current.character.abilities.naturalAbilities.length"
+          [max]="character.abilities.naturalAbilities.length"
           id="reposition{{i}}"
           name="reposition{{i}}"
           [(ngModel)]="reposition"

@@ -5,13 +5,13 @@
     </div>
     <div class="card-body">
       <p class="card-text">
-        You have <strong>{{ current.character.abilities.itemSlots }} Slots</strong> used by Items.
+        You have <strong>{{ character.abilities.itemSlots }} Slots</strong> used by Items.
       </p>
 
       <div class="btn-toolbar justify-content-center">
         <a
           class="btn btn-primary"
-          routerLink="/character/{{ current.character.id }}/items/edit"
+          routerLink="/character/{{ character.id }}/items/edit"
         >Edit</a>
       </div>
     </div>
@@ -19,7 +19,7 @@
 
   <div
     class="card mb-3"
-    *ngFor="let item of current.character.abilities.items; index as i"
+    *ngFor="let item of character.abilities.items; index as i"
   >
     <div class="card-header">
       <h4 class="card-title text-center">{{ item.name }}</h4>

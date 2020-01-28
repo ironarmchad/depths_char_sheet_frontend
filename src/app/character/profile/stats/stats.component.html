@@ -6,9 +6,9 @@
       <h4 class="card-header text-center">Physical Stats</h4>
       <div class="card-body">
         <table class="statTable text-right mx-auto">
-          <tr *ngFor="let stat of current.character.stats.physList">
+          <tr *ngFor="let stat of character.stats.physList">
             <th>{{ stat }}:</th>
-            <td>{{ current.character.stats[stat.toLowerCase()] }}</td>
+            <td>{{ character.stats[stat.toLowerCase()] }}</td>
           </tr>
         </table>
       </div>
@@ -17,9 +17,9 @@
       <h4 class="card-header text-center">Mental Stats</h4>
       <div class="card-body">
         <table class="statTable text-right mx-auto">
-          <tr *ngFor="let stat of current.character.stats.mentList">
+          <tr *ngFor="let stat of character.stats.mentList">
             <th>{{ stat }}:</th>
-            <td>{{ current.character.stats[stat.toLowerCase()] }}</td>
+            <td>{{ character.stats[stat.toLowerCase()] }}</td>
           </tr>
         </table>
       </div>
@@ -35,7 +35,7 @@
       <div class="input-group mb-3" style="max-width: 18em">
         <div class="input-group-prepend">
           <span class="input-group-text">
-            XP use:&nbsp;<strong>{{ current.character.stats.xpCurrent }}</strong>&nbsp;of
+            XP use:&nbsp;<strong>{{ character.stats.xpCurrent }}</strong>&nbsp;of
           </span>
         </div>
         <input
@@ -43,7 +43,7 @@
           type="number"
           id="xpTotal"
           name="xpTotal"
-          [(ngModel)]="current.character.stats.xpTotal"
+          [(ngModel)]="character.stats.xpTotal"
         >
       </div>
 
@@ -51,7 +51,7 @@
       <div class="btn-toolbar justify-content-center">
         <button
           class="btn btn-sm btn-primary m-1"
-          *ngFor="let stat of current.character.stats.statList"
+          *ngFor="let stat of character.stats.statList"
           (click)="levelUp(stat)"
         >{{ stat }}</button>
       </div>
@@ -60,7 +60,7 @@
       <div class="btn-toolbar justify-content-center">
         <button
           class="btn btn-sm btn-primary m-1"
-          *ngFor="let stat of current.character.stats.statList"
+          *ngFor="let stat of character.stats.statList"
           (click)="levelDown(stat)"
         >{{ stat }}</button>
       </div>
@@ -72,8 +72,8 @@
       <h3 class="card-title">Stat Generation Methods</h3>
     </div>
     <div class="card-body">
-      <p *ngIf="current.character.stats.method">
-        This character has been generated using <strong>{{ current.character.stats.method }}</strong> method.
+      <p *ngIf="character.stats.method">
+        This character has been generated using <strong>{{ character.stats.method }}</strong> method.
       </p>
       <p>
         Warning: These tools are for character GENERATION, not LEVEL-UPS. All of these methods will reset
@@ -85,7 +85,7 @@
       </p>
       <div class="btn-toolbar justify-content-center">
         <a
-          routerLink="/character/{{ current.character.id }}/stats/point-buy"
+          routerLink="/character/{{ character.id }}/stats/point-buy"
           class="btn btn-primary"
         >Point-Buy</a>
       </div>

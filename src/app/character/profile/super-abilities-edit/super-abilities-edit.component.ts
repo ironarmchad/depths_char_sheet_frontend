@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {CurrentCharacterService} from '../_current-character.service';
-import {CharacterService} from '../../../_services/character.service';
 import {Ability} from '../../../_models/ability';
+import {Character} from '../../../_models/character';
 
 @Component({
   selector: 'app-super-abilities-edit',
@@ -9,11 +9,13 @@ import {Ability} from '../../../_models/ability';
   styleUrls: ['./super-abilities-edit.component.scss']
 })
 export class SuperAbilitiesEditComponent implements OnInit, OnDestroy {
+  character: Character;
   reposition: number;
 
   constructor(
     private current: CurrentCharacterService,
   ) {
+    this.character = this.current.character;
     this.reposition = 1;
   }
 

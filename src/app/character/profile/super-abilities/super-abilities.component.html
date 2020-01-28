@@ -5,13 +5,13 @@
     </div>
     <div class="card-body">
       <p class="card-text">
-        You have <strong>{{ current.character.abilities.superSlots }} Slots</strong> used by Super Abilities.
+        You have <strong>{{ character.abilities.superSlots }} Slots</strong> used by Super Abilities.
       </p>
 
       <div class="btn-toolbar justify-content-center">
         <a
           class="btn btn-primary"
-          routerLink="/character/{{ current.character.id }}/supers/edit"
+          routerLink="/character/{{ character.id }}/supers/edit"
         >Edit</a>
       </div>
     </div>
@@ -19,7 +19,7 @@
 
   <div
     class="card mb-3"
-    *ngFor="let super of current.character.abilities.superAbilities; index as i"
+    *ngFor="let super of character.abilities.superAbilities; index as i"
   >
     <div class="card-header">
       <h4 class="card-title text-center">{{ super.name }}</h4>
