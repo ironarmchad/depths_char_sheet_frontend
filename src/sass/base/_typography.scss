@@ -1,28 +1,29 @@
-html, body {font-size: 100%}
-
 @media print {
   html, body {font-size: 14px}
 }
 
-$mod_sm: 1.25;
-h1 {font-size: pow($mod_sm, 5) * 1em}
-h2 {font-size: pow($mod_sm, 4) * 1em}
-h3 {font-size: pow($mod_sm, 3) * 1em}
-h4 {font-size: pow($mod_sm, 2) * 1em}
-h5 {font-size: pow($mod_sm, 1) * 1em}
-h6 {font-size: 1em}
-
+@media screen {
+  html {font-size: 100%}
+}
 
 @include media-breakpoint-up(md) {
-  body {font-size: 1.2rem}
+  html {font-size: 120%}
 }
 
 @include media-breakpoint-up(lg) {
-  body {font-size: 1.4rem}
+  html {font-size: 140%}
 }
 
 @include media-breakpoint-up(xl) {
-  body {font-size: 1.6rem}
+  html {font-size: 160%}
 }
 
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Merriweather:300i&display=swap');
 
+h1, h2, h3, h4 {
+  font-family: 'Merriweather', serif;
+}
+
+.kaushan {
+  font-family: 'Kaushan Script', cursive;
+}

@@ -1,10 +1,10 @@
 <div class="container">
-  <p class="display-1 text-center font-weight-normalt">{{ character.name }}</p>
+  <h1 class="text-center display-4">{{ character.name }}</h1>
   <div class="alert alert-warning d-print-none text-center">
     <p>This page is meant for printing thus not mobile friendly... Sorry...</p>
   </div>
 
-  <div class="my-5 d-flex flex-row align-items-center justify-content-between">
+  <div class="mb-2 d-flex flex-row align-items-center justify-content-between">
     <div class="d-flex flex-column align-items-center mr-3">
       <img class="m-3" src="https://via.placeholder.com/600x350.png">
       <p class="para-box">{{ character.lore.summary }}</p>
@@ -18,7 +18,7 @@
     </table>
   </div>
 
-  <div class="my-5 d-flex flex-row justify-content-around align-items-center">
+  <div class="d-flex flex-row justify-content-around align-items-center">
     <table class="hp-tracker bdr-box">
       <tr>
         <th>HP</th>
@@ -35,7 +35,7 @@
     </table>
 
     <div class="bdr-box p-2 text-center">
-      <h4 class="mb-5">XP Tracker</h4>
+      <h4 class="mb-2">XP Tracker</h4>
       <p>
         XP used <strong>{{ character.stats.xpCurrent }} / {{ character.stats.xpTotal }}</strong> <br>
         XP gained (not uploaded): _______
@@ -44,30 +44,30 @@
   </div>
 
 
-  <p class="my-5 para-box">{{ character.lore.description }}</p>
+  <p class="my-3 para-box">{{ character.lore.description }}</p>
 
-  <div class="my-5 w-100">
+  <div class="my-3 w-100">
     <h3 class="text-center">Stat Abilities</h3>
     <div class="card-columns">
       <app-ability-card *ngFor="let ability of character.abilities.statAbilities" [ability]="ability"></app-ability-card>
     </div>
   </div>
 
-  <div class="my-5 w-100">
+  <div class="my-3 w-100">
     <h3 class="text-center">Natural Abilities</h3>
     <div class="card-columns">
       <app-ability-card *ngFor="let ability of character.abilities.naturalAbilities" [ability]="ability"></app-ability-card>
     </div>
   </div>
 
-  <div class="my-5 w-100">
+  <div class="my-3 w-100">
     <h3 class="text-center">Supernatural Abilities</h3>
     <div class="card-columns">
       <app-ability-card *ngFor="let ability of character.abilities.superAbilities" [ability]="ability"></app-ability-card>
     </div>
   </div>
 
-  <div class="my-5 w-100">
+  <div class="my-3 w-100">
     <h3 class="text-center">Items</h3>
     <div class="card-columns">
       <app-ability-card *ngFor="let ability of character.abilities.items" [ability]="ability"></app-ability-card>
@@ -75,7 +75,7 @@
   </div>
 
 
-  <div class="my-5 w-100" style="page-break-before: always">
+  <div class="my-3 w-100" style="page-break-before: always">
     <div class="mb-3">
       <h1 class="text-center">{{ character.name }}</h1>
       <h3 class="text-center">Story Teller Check Up</h3>
