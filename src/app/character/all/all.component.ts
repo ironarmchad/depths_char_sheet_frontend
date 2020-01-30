@@ -17,12 +17,20 @@ export class AllComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.charServ.getCharacterAll().subscribe(res => {
-      this.characters = res;
-    });
+    this.loadCharacters();
 
     this.charServ.getCharacterViewable().subscribe(res => {
       this.viewables = res;
+    });
+  }
+
+  deleteChar(charId: number): void {
+    this.charServ.deleteCharacter(charId).subscribe(() => this.loadCharacters());
+  }
+
+  loadCharacters(): void {
+    this.charServ.getCharacterAll().subscribe(res => {
+      this.characters = res;
     });
   }
 

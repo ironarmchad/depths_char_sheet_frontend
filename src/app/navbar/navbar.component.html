@@ -11,17 +11,13 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/compendium" routerLinkActive="active" (click)="isMenuCollapsed = true">Compendium</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/character" routerLinkActive="active" (click)="isMenuCollapsed = true">Character</a>
-      </li>
+      <app-character-button></app-character-button>
       <!--
       <li class="nav-item">
         <a class="nav-link" routerLink="/guides" routerLinkActive="active" (click)="isMenuCollapsed = true">Guides</a>
       </li>
       -->
-      <li class="nav-item cursor-pointer">
-        <app-login-mini></app-login-mini>
-      </li>
+      <app-login-mini></app-login-mini>
     </ul>
   </div>
 </nav>

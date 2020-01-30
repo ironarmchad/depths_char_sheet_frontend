@@ -44,19 +44,13 @@
 </div>
 
 <!-- User button -->
-<div ngbDropdown *ngIf="user">
-  <a class="nav-link" ngbDropdownToggle>{{user.username}}</a>
-  <div ngbDropdownMenu>
-    <ul class="navbar-nav navbar-nav-collapsable">
-      <li class="nav-item mx-auto">
-        <a class="nav-link text-dark" routerLink="/auth/profile">
-          Profile
-        </a>
+<li class="nav-item" ngbDropdown>
+  <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="userButton" role="button">
+    {{ user.username }}
+  </a>
 
-        <a class="nav-link text-dark" (click)="logout()" href="#">
-          Logout
-        </a>
-      </li>
-    </ul>
+  <div ngbDropdownMenu aria-labelledby="userButton" class="dropdown-menu">
+    <a ngbDropdownItem routerLink="/auth/profile">Profile</a>
+    <a ngbDropdownItem style="cursor: pointer" (click)="logout()">Logout</a>
   </div>
-</div>
+</li>

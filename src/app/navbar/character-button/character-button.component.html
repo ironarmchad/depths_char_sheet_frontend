@@ -1,0 +1,9 @@
+<li class="nav-item" ngbDropdown>
+  <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="charButton" role="button">
+    Characters
+  </a>
+  <div ngbDropdownMenu aria-labelledby="charButton" class="dropdown-menu">
+    <a ngbDropdownItem routerLink="/character">Your&nbsp;Characters</a>
+    <a ngbDropdownItem style="cursor: pointer" (click)="newCharacter()">New Character</a>
+  </div>
+</li>

@@ -43,6 +43,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
     this.charServ.getCharacter(id).subscribe(res => {
       this.current.character = res;
+      this.character = res;
       this.saveTimer = source.subscribe(val => this.charServ.patchCharacter(this.current.character).subscribe());
     });
   }

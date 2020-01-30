@@ -4,6 +4,7 @@ import {User} from '../_models/user';
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {environment} from '../../environments/environment';
+import {UserInfo} from '../_models/user-info';
 
 @Injectable({ providedIn: 'root'})
 export class AuthenticationService {
@@ -53,4 +54,9 @@ export class AuthenticationService {
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
   }
+
+  postUserInfo(info: UserInfo) {
+    return this.http.post(`${environment.apiUrl}/user/info`, {info});
+  }
+
 }

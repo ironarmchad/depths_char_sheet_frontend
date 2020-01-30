@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <div class="mb-4">
-    <h2 class="text-center mb-4">Your Character</h2>
+    <h2 class="text-center mb-4">Your Characters</h2>
     <div class="d-flex flex-row justify-content-center align-middle">
-      <div class="card" style="width: 18em" *ngFor="let character of characters">
+      <div class="card m-1" style="width: 18em" *ngFor="let character of characters">
         <div class="card-body">
           <h4 class="text-center card-title">{{ character.name }}</h4>
 
@@ -11,6 +11,7 @@
           <div class="btn-toolbar justify-content-center">
             <a class="btn btn-sm btn-primary m-1" routerLink="/character/{{ character.id }}">Profile</a>
             <a class="btn btn-sm btn-secondary m-1" routerLink="/character/view/{{ character.id }}">View</a>
+            <a class="btn btn-sm btn-danger m-1 text-white" (click)="deleteChar(character.id)">Delete</a>
           </div>
         </div>
       </div>
