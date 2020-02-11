@@ -1,0 +1,18 @@
+<div class="d-flex flex-column align-items-center">
+  <h3>Difficulty Class</h3>
+  <p class="para-box">
+    In the case of player versus environment, it is often the case that the ST will just create a difficulty class (DC) for the
+    action. The player will roll their stat and if their roll is greater to or equal to the Difficulty Class then they succeed.
+    Let us look at the probabilities to determine what makes a reasonable difficulty class.
+  </p>
+  <div class="chart-box">
+    <canvas #dcChart>{{ chart }}</canvas>
+  </div>
+  <p class="para-box">
+    By inspecting the probability we can see that setting the DC of +2 to the stat or less results in a "don't Botch" situation, where the only failure is
+    rolling minimum value. Setting a DC of +4 to stat sets up a 50/50 chance of success or failure. Setting a DC of +6 to stat
+    allows only critical successes. Armed with this information, I use the 50/50 chance to set DCs with this question:
+    What type of person has a 50/50 chance of success? If the normal human does, I set DC based on normal human stat value of
+    3, giving us a DC of 7. If you need to be superhuman to achieve a 50/50 chance then perhaps base the DC on 7, giving us a DC of 11.
+  </p>
+</div>

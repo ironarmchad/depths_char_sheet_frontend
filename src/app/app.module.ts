@@ -16,6 +16,10 @@ import {OutOfDomainComponent} from './out-of-domain/out-of-domain.component';
 import {TypographyComponent} from './typography/typography.component';
 import { GuidesModule } from './guides/guides.module';
 import {CharacterService} from './_services/character.service';
+import { UnderstandingDiceComponent } from './understanding-dice/understanding-dice.component';
+import { DifficultyDiceComponent } from './understanding-dice/difficulty-dice/difficulty-dice.component';
+import { GameComponent } from './game/game.component';
+import { OpposedDiceComponent } from './understanding-dice/opposed-dice/opposed-dice.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,10 @@ import {CharacterService} from './_services/character.service';
     UserComponent,
     OutOfDomainComponent,
     TypographyComponent,
+    UnderstandingDiceComponent,
+    DifficultyDiceComponent,
+    GameComponent,
+    OpposedDiceComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,3 @@
+## Rule: Standard Currency (Bells and Whistles)
+
+Depths usually has a standard currency, often named bells and whistles, for buying non-magical items and services. Usually the ST doesn't watch the economy of the "standard currency" all that much and you may be fabulously wealthy or broke depending on the ST. Check with your ST for details on what the standard currency is but don't expect it will be important.

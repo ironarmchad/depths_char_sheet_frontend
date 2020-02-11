@@ -6,6 +6,7 @@ import {AuthGuard} from './_guards/auth.guard';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {UserComponent} from './user/user.component';
 import {TypographyComponent} from './typography/typography.component';
+import {UnderstandingDiceComponent} from './understanding-dice/understanding-dice.component';
 
 
 const routes: Routes = [
@@ -22,8 +23,8 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'guides',
-    loadChildren: () => import('./guides/guides.module').then(mod => mod.GuidesModule)
+    path: 'understanding-dice',
+    component: UnderstandingDiceComponent,
   },
   {path: '', component: HomeComponent},
   {path: '**', component: PageNotFoundComponent}

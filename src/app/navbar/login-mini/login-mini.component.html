@@ -44,7 +44,7 @@
 </div>
 
 <!-- User button -->
-<li class="nav-item" ngbDropdown>
+<li class="nav-item" ngbDropdown *ngIf="user">
   <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="userButton" role="button">
     {{ user.username }}
   </a>

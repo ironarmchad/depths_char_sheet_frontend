@@ -8,9 +8,7 @@
 
   <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/compendium" routerLinkActive="active" (click)="isMenuCollapsed = true">Compendium</a>
-      </li>
+      <app-info-button></app-info-button>
       <app-character-button></app-character-button>
       <!--
       <li class="nav-item">

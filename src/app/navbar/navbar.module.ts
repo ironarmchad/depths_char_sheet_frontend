@@ -6,11 +6,12 @@ import {NgbCollapseModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 import {ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import { CharacterButtonComponent } from './character-button/character-button.component';
+import { InfoButtonComponent } from './info-button/info-button.component';
 
 
 
 @NgModule({
-  declarations: [NavbarComponent, LoginMiniComponent, CharacterButtonComponent],
+  declarations: [NavbarComponent, LoginMiniComponent, CharacterButtonComponent, InfoButtonComponent],
   exports: [
     NavbarComponent
   ],
